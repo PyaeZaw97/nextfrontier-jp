@@ -1,0 +1,188 @@
+/* Custom Properties for Japanese Theme */
+:root {
+    --cherry-blossom: #fce4ec;
+    --sakura-pink: #ffb7c5;
+    --ink-black: #2d3436;
+    --paper-white: #f9f9f9;
+    --gold-accent: #d4af37;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.6;
+    color: var(--ink-black);
+    background-color: var(--paper-white);
+}
+
+h1, h2, .logo {
+    font-family: 'Playfair Display', serif;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 4rem 2rem;
+}
+
+/* Navigation */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo span {
+    color: var(--sakura-pink);
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: var(--ink-black);
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+    color: var(--sakura-pink);
+}
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(255,183,197,0.2), rgba(255,183,197,0.2)), 
+                url('https://images.unsplash.com/photo-1528360983277-13d401cdc186?auto=format&fit=crop&w=1350&q=80'); /* Mount Fuji/Pagoda image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.jp-text {
+    font-weight: 300;
+    color: #636e72;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: var(--ink-black);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.3s, background 0.3s;
+}
+
+.btn:hover {
+    background: var(--sakura-pink);
+    transform: translateY(-3px);
+}
+
+/* Grid & Cards */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.jp-subtitle {
+    color: var(--sakura-pink);
+    letter-spacing: 2px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: white;
+    padding: 2rem;
+    border-bottom: 4px solid var(--cherry-blossom);
+    transition: 0.3s;
+}
+
+.card:hover {
+    border-bottom: 4px solid var(--sakura-pink);
+}
+
+/* Courses */
+.alt-bg {
+    background-color: #fff1f3;
+}
+
+.course-list {
+    max-width: 800px;
+    margin: auto;
+}
+
+.course-item {
+    background: white;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--ink-black);
+}
+
+.price {
+    font-weight: bold;
+    color: var(--sakura-pink);
+}
+
+/* Footer */
+footer {
+    background: var(--ink-black);
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+/* Mobile Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.2rem;
+    }
+    
+    .nav-links {
+        display: none; /* Simplification for code brevity; ideally use a hamburger menu */
+    }
+    
+    .course-item {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .price {
+        margin-bottom: 1rem;
+    }
+}
