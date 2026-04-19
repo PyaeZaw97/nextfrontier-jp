@@ -67,6 +67,22 @@ h1, h2, .logo {
     color: var(--sakura-pink);
 }
 
+.lang-toggle {
+    border: 1px solid var(--ink-black);
+    background: white;
+    color: var(--ink-black);
+    border-radius: 999px;
+    padding: 0.45rem 0.9rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+}
+
+.lang-toggle:hover {
+    background: var(--ink-black);
+    color: white;
+}
+
 /* Hero Section */
 .hero {
     height: 80vh;
@@ -83,11 +99,12 @@ h1, h2, .logo {
 .hero-content h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
+    color: #904d86;
 }
 
 .jp-text {
     font-weight: 300;
-    color: #636e72;
+    color: #904d86;
     margin-bottom: 1.5rem;
 }
 
@@ -169,6 +186,10 @@ footer {
 
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
+    .navbar {
+        gap: 1rem;
+    }
+
     .hero-content h1 {
         font-size: 2.2rem;
     }

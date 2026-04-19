@@ -13,40 +13,41 @@
     <nav class="navbar">
         <div class="logo">さくら <span>Sakura</span></div>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#courses">Courses</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#about" data-i18n="navAbout">About</a></li>
+            <li><a href="#courses" data-i18n="navCourses">Courses</a></li>
+            <li><a href="#contact" data-i18n="navContact">Contact</a></li>
         </ul>
+        <button id="lang-toggle" class="lang-toggle" type="button" aria-label="Switch language">日本語</button>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <h1>Unlock Your Future in Japan</h1>
+            <h1 data-i18n="heroTitle">Unlock Your Future in Japan</h1>
             <p class="jp-text">日本の未来を切り開きましょう</p>
-            <a href="#contact" class="btn">Enroll Now / 入学申込</a>
+            <a href="#contact" class="btn" data-i18n="heroCta">Enroll Now</a>
         </div>
     </header>
 
     <section id="about" class="container">
         <div class="section-title">
-            <h2>Why Choose Us?</h2>
+            <h2 data-i18n="aboutTitle">Why Choose Us?</h2>
             <p class="jp-subtitle">当校が選ばれる理由</p>
         </div>
         <div class="grid">
             <div class="card">
-                <h3>Expert Teachers</h3>
+                <h3 data-i18n="card1Title">Expert Teachers</h3>
                 <p class="jp-text">経験豊富な講師陣</p>
-                <p>Learn from native speakers with over 10 years of professional teaching experience.</p>
+                <p data-i18n="card1Text">Learn from native speakers with over 10 years of professional teaching experience.</p>
             </div>
             <div class="card">
-                <h3>Cultural Immersion</h3>
+                <h3 data-i18n="card2Title">Cultural Immersion</h3>
                 <p class="jp-text">文化体験</p>
-                <p>We don't just teach grammar; we provide tea ceremonies, calligraphy, and city tours.</p>
+                <p data-i18n="card2Text">We don't just teach grammar; we provide tea ceremonies, calligraphy, and city tours.</p>
             </div>
             <div class="card">
-                <h3>JLPT Success</h3>
+                <h3 data-i18n="card3Title">JLPT Success</h3>
                 <p class="jp-text">JLPT合格実績</p>
-                <p>90% of our students pass the N2/N1 levels within their first 18 months.</p>
+                <p data-i18n="card3Text">90% of our students pass the N2/N1 levels within their first 18 months.</p>
             </div>
         </div>
     </section>
@@ -54,18 +55,18 @@
     <section id="courses" class="alt-bg">
         <div class="container">
             <div class="section-title">
-                <h2>Our Courses / コース紹介</h2>
+                <h2 data-i18n="coursesTitle">Our Courses</h2>
             </div>
             <div class="course-list">
                 <div class="course-item">
                     <span class="price">¥50,000</span>
-                    <h4>Intensive Japanese <br><small>短期集中コース</small></h4>
-                    <p>Perfect for fast learners wanting to reach conversational level quickly.</p>
+                    <h4 data-i18n="course1Title">Intensive Japanese</h4>
+                    <p data-i18n="course1Text">Perfect for fast learners wanting to reach conversational level quickly.</p>
                 </div>
                 <div class="course-item">
                     <span class="price">¥35,000</span>
-                    <h4>Part-time Evening <br><small>夜間コース</small></h4>
-                    <p>Designed for professionals working in Japan who need business language skills.</p>
+                    <h4 data-i18n="course2Title">Part-time Evening</h4>
+                    <p data-i18n="course2Text">Designed for professionals working in Japan who need business language skills.</p>
                 </div>
             </div>
         </div>
@@ -73,12 +74,80 @@
 
     <footer id="contact">
         <div class="container">
-            <h3>Ready to start?</h3>
+            <h3 data-i18n="footerTitle">Ready to start?</h3>
             <p>Email: info@sakura-academy.jp</p>
-            <p>Location: Shinjuku, Tokyo, Japan</p>
+            <p data-i18n="footerLocation">Location: Shinjuku, Tokyo, Japan</p>
             <p>&copy; 2026 Sakura Academy. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        const translations = {
+            en: {
+                navAbout: "About",
+                navCourses: "Courses",
+                navContact: "Contact",
+                heroTitle: "Unlock Your Future in Japan",
+                heroCta: "Enroll Now",
+                aboutTitle: "Why Choose Us?",
+                card1Title: "Expert Teachers",
+                card1Text: "Learn from native speakers with over 10 years of professional teaching experience.",
+                card2Title: "Cultural Immersion",
+                card2Text: "We don't just teach grammar; we provide tea ceremonies, calligraphy, and city tours.",
+                card3Title: "JLPT Success",
+                card3Text: "90% of our students pass the N2/N1 levels within their first 18 months.",
+                coursesTitle: "Our Courses",
+                course1Title: "Intensive Japanese",
+                course1Text: "Perfect for fast learners wanting to reach conversational level quickly.",
+                course2Title: "Part-time Evening",
+                course2Text: "Designed for professionals working in Japan who need business language skills.",
+                footerTitle: "Ready to start?",
+                footerLocation: "Location: Shinjuku, Tokyo, Japan",
+                toggleLabel: "日本語"
+            },
+            ja: {
+                navAbout: "概要",
+                navCourses: "コース",
+                navContact: "お問い合わせ",
+                heroTitle: "日本での未来を切り開こう",
+                heroCta: "入学申込",
+                aboutTitle: "当校が選ばれる理由",
+                card1Title: "経験豊富な講師陣",
+                card1Text: "10年以上の指導経験を持つネイティブ講師から学べます。",
+                card2Title: "文化体験",
+                card2Text: "文法だけでなく、茶道や書道、街歩きツアーも体験できます。",
+                card3Title: "JLPT合格実績",
+                card3Text: "入学後18か月以内に90%の受講生がN2またはN1に合格しています。",
+                coursesTitle: "コース紹介",
+                course1Title: "短期集中コース",
+                course1Text: "短期間で会話力を高めたい方に最適です。",
+                course2Title: "夜間コース",
+                course2Text: "日本で働く社会人向けの実践的なビジネス日本語コースです。",
+                footerTitle: "始める準備はできましたか？",
+                footerLocation: "所在地: 東京都新宿区",
+                toggleLabel: "English"
+            }
+        };
+
+        let currentLang = "en";
+        const toggleButton = document.getElementById("lang-toggle");
+
+        function setLanguage(lang) {
+            document.documentElement.lang = lang;
+            document.querySelectorAll("[data-i18n]").forEach((element) => {
+                const key = element.dataset.i18n;
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+            toggleButton.textContent = translations[lang].toggleLabel;
+            currentLang = lang;
+        }
+
+        toggleButton.addEventListener("click", () => {
+            setLanguage(currentLang === "en" ? "ja" : "en");
+        });
+    </script>
 
 </body>
 </html>
