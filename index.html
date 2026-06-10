@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Next Frontier Japanese Language School</title>
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/index.css">
+
+        <!-- Google Fonts: Plus Jakarta Sans & Noto Sans JP/Myanmar for fallback -->
+        <link rel="preconnect" href="https://googleapis.com">
+        <link rel="preconnect" href="https://gstatic.com" crossorigin>
+        <link href="https://googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Sans+Myanmar:wght@300;400;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+        <!-- Your existing CSS Links (keep these below the font links) -->
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/index.css">
+
+        <!-- FIX: Valid Font Awesome CDN Link -->
+        <link rel="stylesheet" href="https://cloudflare.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+    </head>
+    <body>
+        <header class="site-header">
+            <div class="header-container">
+                
+                <!-- Left Side Logo Brand Block -->
+                <div class="logo">
+                    <img src="img/logo.png" alt="Logo"/>
+                    <span><strong>Next Frontier</strong></span>
+                </div>
+                
+                <!-- Right Side Multi-tier Block -->
+                <div class="header-navigation-column">
+                    
+                    <!-- Tier 1 Row: Minimal Utility Links Tracker -->
+                    <div class="top-utility-bar">
+                        <div class="utility-links">
+                            <a href="#contact" class="utility-item">Request for information</a>
+                            <a href="#access" class="utility-item access-btn">Access</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Tier 2 Row: Main Menus + International Call to Action Button -->
+                    <div class="main-navigation-row">
+                        <nav class="main-nav">
+                            <div class="nav-menu">
+                                <a href="index.html" class="active">Home</a>
+                                <a href="#">News</a>
+                                <a href="#">Course</a>
+                                <a href="#">Message For You</a>
+                            </div>
+                        </nav>
+                        
+                        <!-- Action Controls Section (Houses Language Selector Drawer Toggle) -->
+                        <div class="header-actions">
+                            <div class="language-selector">
+                                <button class="lang-dropdown-trigger" id="langTrigger">
+                                    <img src="img/flags/gb.png" alt="English Flag" class="flag-icon"> 
+                                    <span class="lang-text">English</span>
+                                    <span class="chevron-arrow">⯆</span>
+                                </button>
+
+                                <div class="lang-dropdown-menu" id="langMenu">
+                                    <a href="index.html" class="lang-item">
+                                        <img src="img/flags/gb.png" alt="UK" class="flag-icon"> English
+                                    </a>
+                                    <a href="index_jp.html" class="lang-item">
+                                        <img src="img/flags/jp.png" alt="Japan" class="flag-icon"> Japanese
+                                    </a>
+                                    <a href="index_mm.html" class="lang-item">
+                                        <img src="img/flags/mm.png" alt="Myanmar" class="flag-icon"> Myanmar
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Mobile Hamburger Toggle Drawer Trigger -->
+                            <button class="hamburger-toggle" id="menuToggle" aria-label="Toggle Menu">
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                                <span class="bar"></span>
+                            </button>
+                        </div>
+                    </div> <!-- /main-navigation-row -->
+
+                </div> <!-- /header-navigation-column -->
+            </div>
+        </header>
+
+        <!-- <section class="hero-banner">
+            <div class="hero-overlay"></div>
+            <div class="hero-content">
+                <h1>Your Journey to Japanese Fluency Starts Here</h1>
+                <a href="#" class="cta-button">Contact Us</a>
+            </div>
+        </section> -->
+
+        <!-- Top Banner / Modern Smooth Image Slider -->
+        <section class="hero-slider-wrapper">
+            <!-- Image Slides Matrix -->
+            <div class="slider-container">
+                <!-- Slide 1 -->
+                <div class="slide active" style="background-image: url('img/banner-7.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Your Journey to Japanese Fluency Starts Here</h1>
+                        <p>Learn from native experts and unlock global opportunities.</p>
+                        <a href="#" class="cta-button">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="slide" style="background-image: url('img/banner-10.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Immersive Learning Experiences</h1>
+                        <p>Engage in active conversations with native Japanese educators.</p>
+                        <a href="#" class="cta-button">Explore Courses</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="slide" style="background-image: url('img/banner-9.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Pass the JLPT with Confidence</h1>
+                        <p>Structured training programs designed for N5 through N1 mastery.</p>
+                        <a href="#" class="cta-button">View Schedule</a>
+                    </div>
+                </div>
+
+                <!-- Slide 4 -->
+                <!-- <div class="slide" style="background-image: url('img/banner-4.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Cultural Connection Framework</h1>
+                        <p>Explore traditional tea ceremonies, calligraphy, and modern customs.</p>
+                        <a href="#" class="cta-button">Learn More</a>
+                    </div>
+                </div> -->
+
+                <!-- Slide 5 -->
+                <!-- <div class="slide" style="background-image: url('img/banner-5.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Study and Career Paths in Japan</h1>
+                        <p>Direct assistance with student visas and corporate job placement support.</p>
+                        <a href="#" class="cta-button">Get Consultation</a>
+                    </div>
+                </div> -->
+
+                <!-- Slide 6 -->
+                <!-- <div class="slide" style="background-image: url('img/banner-6.jpg');">
+                    <div class="hero-overlay"></div>
+                    <div class="hero-content">
+                        <h1>Join Next Frontier Today</h1>
+                        <p>Your portal to global professional standard education awaits.</p>
+                        <a href="#" class="cta-button">Register Online</a>
+                    </div>
+                </div> -->
+            </div>
+
+            <!-- Arrow Navigation Controls -->
+            <button class="slider-arrow prev-arrow" aria-label="Previous Slide">&#10094;</button>
+            <button class="slider-arrow next-arrow" aria-label="Next Slide">&#10095;</button>
+
+            <!-- Glassmorphic Indicator Pagination Dots -->
+            <div class="slider-dots-container">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+                <span class="dot" data-index="2"></span>
+                <!-- <span class="dot" data-index="3"></span>
+                <span class="dot" data-index="4"></span>
+                <span class="dot" data-index="5"></span> -->
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+        ABOUT US SECTION (Premium Minimalist Grid Layout)
+        ========================================================================== */ -->
+        <section class="about-section">
+            <div class="about-container">
+                
+                <!-- Left Side: Interactive Graphic Panel Matrix -->
+                <div class="about-media-block">
+                    <div class="about-image-wrapper">
+                        <!-- Replace with an authentic classroom or culture image asset -->
+                        <img src="img/about-classroom.jpg" alt="Sakura Japanese Classroom" class="about-main-img">
+                    </div>
+                    <!-- Floating Glassmorphic Experience Badge -->
+                    <div class="glass-badge">
+                        <span class="badge-number">100%</span>
+                        <span class="badge-text">Success Rate</span>
+                    </div>
+                </div>
+
+                <!-- Right Side: Structured Descriptive Typography Content -->
+                <div class="about-content-block">
+                    <header class="section-header">
+                        <span class="section-tagline">Discover Your Potential</span>
+                        <h2 class="section-title">Welcome to <span style="color:#bc002d;">Next Frontier</span> Japanese Language School</h2>
+                        <div class="title-accent-line"></div>
+                    </header>
+
+                    <p class="about-description">
+                        We provide professional Japanese language education for students, professionals, and anyone interested in Japanese culture. Our holistic framework bridges technical fluency with authentic cultural immersion.
+                    </p>
+
+                    <!-- Value Proposition Features Checklist Matrix -->
+                    <div class="features-grid">
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon-box">
+                                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text-box">
+                                <h3>Experienced Japanese instructors</h3>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon-box">
+                                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text-box">
+                                <h3>Flexible online and classroom learning</h3>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon-box">
+                                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text-box">
+                                <h3>JLPT-focused curriculum</h3>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon-box">
+                                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text-box">
+                                <h3>Interactive speaking practice</h3>
+                            </div>
+                        </div>
+
+                        <div class="feature-card">
+                            <div class="feature-icon-box">
+                                <svg class="check-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                                    <polyline points="20 6 9 17 4 12"></polyline>
+                                </svg>
+                            </div>
+                            <div class="feature-text-box">
+                                <h3>Student-centered learning environment</h3>
+                            </div>
+                        </div>
+
+                    </div> <!-- /features-grid -->
+                    
+                    <div class="about-action-row">
+                        <a href="#" class="about-cta">Learn More About Our Philosophy →</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+        COURSES SELECTION SECTION (Modern Card Grid Matrix)
+        ========================================================================== -->
+        <section class="courses-section">
+            <div class="courses-container">
+                
+                <!-- Section Header Structure -->
+                <header class="section-center-header">
+                    <span class="section-tagline">Tailored Programs</span>
+                    <h2 class="section-title">Explore Our Japanese Courses</h2>
+                    <div class="title-accent-line centered-line"></div>
+                </header>
+
+                <!-- Course Card Grid Layout Box -->
+                <div class="courses-grid">
+                    
+                    <!-- Card 1: Beginner Level -->
+                    <article class="course-card">
+                        <div class="course-image-box">
+                            <img src="img/course-beginner.jpg" alt="Beginner Japanese Course">
+                            <span class="course-level-tag">N5 - N4</span>
+                        </div>
+                        <div class="course-content-box">
+                            <div class="course-meta">
+                                <span class="meta-item">⏱ 3 Months</span>
+                                <span class="meta-item">👥 Max 15 Students</span>
+                            </div>
+                            <h3 class="course-card-title">Beginner Japanese Foundation</h3>
+                            <p class="course-card-text">Master Hiragana, Katakana, and basic conversational structures. Perfect for absolute beginners starting their fluency journey.</p>
+                            <div class="course-footer-row">
+                                <span class="course-price">$180 <small>/ course</small></span>
+                                <a href="#" class="course-action-link">View Details →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 2: Intermediate Level -->
+                    <article class="course-card">
+                        <div class="course-image-box">
+                            <img src="img/course-intermediate.jpg" alt="Intermediate Japanese Course">
+                            <span class="course-level-tag">N3</span>
+                        </div>
+                        <div class="course-content-box">
+                            <div class="course-meta">
+                                <span class="meta-item">⏱ 4 Months</span>
+                                <span class="meta-item">👥 Max 12 Students</span>
+                            </div>
+                            <h3 class="course-card-title">Intermediate Fluency Mastery</h3>
+                            <p class="course-card-text">Advance your speech syntax, learn intermediate kanji, and prepare comprehensively for the JLPT N3 level certification exam.</p>
+                            <div class="course-footer-row">
+                                <span class="course-price">$240 <small>/ course</small></span>
+                                <a href="#" class="course-action-link">View Details →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Card 3: Business/Advanced Level -->
+                    <article class="course-card">
+                        <div class="course-image-box">
+                            <img src="img/course-business.jpg" alt="Business Japanese Course">
+                            <span class="course-level-tag">N2 - N1</span>
+                        </div>
+                        <div class="course-content-box">
+                            <div class="course-meta">
+                                <span class="meta-item">⏱ 5 Months</span>
+                                <span class="meta-item">👥 Max 10 Students</span>
+                            </div>
+                            <h3 class="course-card-title">Advanced Business Japanese</h3>
+                            <p class="course-card-text">Develop formal Keigo protocol, read business publications, and secure corporate placement opportunities directly within Japan.</p>
+                            <div class="course-footer-row">
+                                <span class="course-price">$320 <small>/ course</small></span>
+                                <a href="#" class="course-action-link">View Details →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                </div> <!-- /courses-grid -->
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+        INSTRUCTORS CAROUSEL SECTION (Infinite Smooth Horizontal Glider)
+        ========================================================================== -->
+        <section class="instructors-section">
+            <div class="instructors-container">
+                
+                <!-- Section Title Track Header -->
+                <header class="section-center-header">
+                    <span class="section-tagline">Learn From Native Experts</span>
+                    <h2 class="section-title">Our Experienced Instructors</h2>
+                    <div class="title-accent-line centered-line"></div>
+                </header>
+
+                <!-- 🚀 Infinite Carousel Core Rail System Container Workspace -->
+                <!-- The main window wrapper keeping the row hidden as it scrolls out of bounds -->
+                <div class="carousel-viewport">
+                    <!-- 🚀 FIX: Only ONE track container carrying the ID 'senseiTrack' for JavaScript -->
+                    <div class="carousel-track" id="senseiTrack">
+                        
+                        <!-- Instructor Card 1 -->
+                        <div class="instructor-card">
+                            <div class="instructor-img-box">
+                                <img src="img/sensei-1.jpg" alt="Sato Sensei">
+                                <div class="instructor-overlay-tint"></div>
+                            </div>
+                            <div class="instructor-info-box">
+                                <span class="instructor-role">JLPT N1 Expert</span>
+                                <h3 class="instructor-name">Sato Kenji</h3>
+                                <p class="instructor-bio">15+ years teaching international students. Specializes in advanced grammar structures and kanji memory systems.</p>
+                            </div>
+                        </div>
+
+                        <!-- Instructor Card 2 -->
+                        <div class="instructor-card">
+                            <div class="instructor-img-box">
+                                <img src="img/sensei-2.jpg" alt="Tanaka Sensei">
+                                <div class="instructor-overlay-tint"></div>
+                            </div>
+                            <div class="instructor-info-box">
+                                <span class="instructor-role">Native Conversation Coach</span>
+                                <h3 class="instructor-name">Tanaka Yuka</h3>
+                                <p class="instructor-bio">Certified voice coach from Tokyo. Uses active speech immersive frameworks to build natural accent structures fast.</p>
+                            </div>
+                        </div>
+
+                        <!-- Instructor Card 3 -->
+                        <div class="instructor-card">
+                            <div class="instructor-img-box">
+                                <img src="img/sensei-3.jpg" alt="Watanabe Sensei">
+                                <div class="instructor-overlay-tint"></div>
+                            </div>
+                            <div class="instructor-info-box">
+                                <span class="instructor-role">Business Keigo Specialist</span>
+                                <h3 class="instructor-name">Watanabe Takashi</h3>
+                                <p class="instructor-bio">Former corporate training director in Kyoto. Prepares students for job interviews and business protocol execution.</p>
+                            </div>
+                        </div>
+
+                        <!-- Instructor Card 4 -->
+                        <div class="instructor-card">
+                            <div class="instructor-img-box">
+                                <img src="img/sensei-4.jpg" alt="Kobayashi Sensei">
+                                <div class="instructor-overlay-tint"></div>
+                            </div>
+                            <div class="instructor-info-box">
+                                <span class="instructor-role">Beginner Foundation Guide</span>
+                                <h3 class="instructor-name">Kobayashi Mai</h3>
+                                <p class="instructor-bio">Specializes in accelerating early retention rates for Hiragana, Katakana, and basic sentence construction paths.</p>
+                            </div>
+                        </div>
+
+                        <!-- ==========================================================================
+                        🚀 CLONE TRAIN NODES (Hidden from screen readers using aria-hidden)
+                        ========================================================================== -->
+                        
+                        <!-- Instructor Card 1 Clone -->
+                        <div class="instructor-card" aria-hidden="true">
+                            <div class="instructor-img-box">
+                                <img src="img/sensei-1.jpg" alt="Sato Kenji">
+                                <div class="instructor-overlay-tint"></div>
+                            </div>
+                            <div class="instructor-info-box">
+                                <span class="instructor-role">JLPT N1 Expert</span>
+                                <h3 class="instructor-name">Sato Kenji</h3>
+                                <p class="instructor-bio">15+ years teaching international students. Specializes in advanced grammar structures and kanji memory systems.</p>
+                            </div>
+                        </div>
+
+                        <!-- Instructor Card 2 Clone -->
+                        <div class="instructor-card" aria-hidden="true">
+                            <div class="instructor-img-box">
+                                <img src="img/sensei-2.jpg" alt="Tanaka Yuka">
+                                <div class="instructor-overlay-tint"></div>
+                            </div>
+                            <div class="instructor-info-box">
+                                <span class="instructor-role">Native Conversation Coach</span>
+                                <h3 class="instructor-name">Tanaka Yuka</h3>
+                                <p class="instructor-bio">Certified voice coach from Tokyo. Uses active speech immersive frameworks to build natural accent structures fast.</p>
+                            </div>
+                        </div>
+
+                        <!-- Instructor Card 3 Clone -->
+                        <div class="instructor-card" aria-hidden="true">
+                            <div class="instructor-img-box">
+                                <img src="img/sensei-3.jpg" alt="Watanabe Takashi">
+                                <div class="instructor-overlay-tint"></div>
+                            </div>
+                            <div class="instructor-info-box">
+                                <span class="instructor-role">Business Keigo Specialist</span>
+                                <h3 class="instructor-name">Watanabe Takashi</h3>
+                                <p class="instructor-bio">Former corporate training director in Kyoto. Prepares students for job interviews and business protocol execution.</p>
+                            </div>
+                        </div>
+
+                        <!-- Instructor Card 4 Clone -->
+                        <div class="instructor-card" aria-hidden="true">
+                            <div class="instructor-img-box">
+                                <img src="img/sensei-4.jpg" alt="Kobayashi Mai">
+                                <div class="instructor-overlay-tint"></div>
+                            </div>
+                            <div class="instructor-info-box">
+                                <span class="instructor-role">Beginner Foundation Guide</span>
+                                <h3 class="instructor-name">Kobayashi Mai</h3>
+                                <p class="instructor-bio">Specializes in accelerating early retention rates for Hiragana, Katakana, and basic sentence construction paths.</p>
+                            </div>
+                        </div>
+
+                    </div> <!-- /carousel-track -->
+
+                    <!-- 🚀 Clean Pill-Shaped Pagination Dots (Placed right below the single track) -->
+                    <div class="carousel-pagination-dots" id="senseiPagination">
+                        <span class="carousel-dot active" data-slide="0"></span>
+                        <span class="carousel-dot" data-slide="1"></span>
+                        <span class="carousel-dot" data-slide="2"></span>
+                        <span class="carousel-dot" data-slide="3"></span>
+                    </div>
+                    
+                </div> <!-- /carousel-viewport -->
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+        CONTACT & COMPANY PROFILE SECTION (Modern Dual Grid Interface)
+        ========================================================================== -->
+        <section class="contact-profile-section">
+            <div class="contact-profile-container">
+                
+                <!-- Master Section Header Center Element -->
+                <header class="section-center-header">
+                    <span class="section-tagline">Connect With Us</span>
+                    <h2 class="section-title">Contact Information & Company Profile</h2>
+                    <div class="title-accent-line centered-line"></div>
+                </header>
+
+                <!-- 🚀 VERTICAL BLOCK 1: GET IN TOUCH CONTACT CARDS DESKS -->
+                <!-- ID Hook attached right here means 'Request for information' lands perfectly on the title -->
+                <div id="contact" class="contact-vertical-block">
+                    <div class="contact-info-panel">
+                        <span class="panel-subtitle">Get In Touch</span>
+                        <h3 class="panel-main-title">We'd love to hear from you</h3>
+                        <p class="panel-desc">Have questions about visa processing, batch schedules, or JLPT levels? Reach out directly via our official communication desks.</p>
+                        
+                        <div class="contact-item-rail">
+                            <!-- Address -->
+                            <div class="contact-meta-card">
+                                <div class="meta-icon-bubble">📍</div>
+                                <div class="meta-text-content">
+                                    <h4>Our Campus Address</h4>
+                                    <p>123 Education Street, Tokyo Learning Center</p>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone -->
+                            <div class="contact-meta-card">
+                                <div class="meta-icon-bubble">📞</div>
+                                <div class="meta-text-content">
+                                    <h4>Hotline Voice Desks</h4>
+                                    <p><a href="tel:+819012345678">+81 90-1234-5678</a></p>
+                                </div>
+                            </div>
+                            
+                            <!-- Email -->
+                            <div class="contact-meta-card">
+                                <div class="meta-icon-bubble">📧</div>
+                                <div class="meta-text-content">
+                                    <h4>Official Academic Email</h4>
+                                    <p><a href="mailto:info@sakurajapanese.com">info@sakurajapanese.com</a></p>
+                                </div>
+                            </div>
+                            
+                            <!-- Office Hours -->
+                            <div class="contact-meta-card">
+                                <div class="meta-icon-bubble">🕒</div>
+                                <div class="meta-text-content">
+                                    <h4>Standard Office Hours</h4>
+                                    <p>Monday – Saturday | 9:00 AM – 6:00 PM</p>
+                                </div>
+                            </div>
+                        </div> <!-- /contact-item-rail -->
+                    </div> <!-- /contact-info-panel -->
+                </div> <!-- /contact-vertical-block -->
+
+                <!-- 🚀 VERTICAL BLOCK 2: GOOGLE MAP CAMPUS ACCESS FRAME -->
+                <!-- ID Hook attached right here means 'Access' lands perfectly on the Map Title -->
+                <div id="access" class="access-vertical-block">
+                    <h3 class="table-block-title">Campus Access & Location Map</h3>
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27828031.474653557!2d115.70113777301081!3d31.634493848633277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2sJapan!5e0!3m2!1sen!2smm!4v1781030088262!5m2!1sen!2smm" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div> <!-- /access-vertical-block -->
+
+                <!-- Architectural Company Profile Table -->
+                <div class="company-profile-matrix-block">
+                    <h3 class="table-block-title">Company Institutional Profile</h3>
+                    <div class="table-responsive-viewport">
+                        <table class="profile-data-table">
+                            <tbody>
+                                 <tr>
+                                    <td class="table-label-header">Institutional Name</td>
+                                    <td class="table-data-node">Next Frontier / Sakura Japanese Language School Group</td>
+                                </tr>
+                                <tr>
+                                    <td class="table-label-header">Date of Incorporation</td>
+                                    <td class="table-data-node">April 12, 2018</td>
+                                </tr>
+                                <tr>
+                                    <td class="table-label-header">Accreditation status</td>
+                                    <td class="table-data-node">Authorized Educational Institution Framework Status Profile</td>
+                                </tr>
+                                <tr>
+                                    <td class="table-label-header">Primary Executives</td>
+                                    <td class="table-data-node">Sato Kenji (Managing Board Academic Director)</td>
+                                </tr>
+                                <tr>
+                                    <td class="table-label-header">Authorized Bankers</td>
+                                    <td class="table-data-node">Sumitomo Mitsui Banking Corporation (SMBC), MUFG Bank</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ==========================================================================
+        GLOBAL SITE FOOTER (Premium Multi-Column Architecture)
+        ========================================================================== -->
+        <footer class="site-footer">
+            <div class="footer-upper-wrapper">
+                <div class="footer-container">
+                    
+                    
+                    <div class="footer-column brand-column">
+                        <div class="footer-logo">
+                            <img src="img/logo.png" alt="Logo"/>
+                            <span><strong>Next Frontier</strong></span>
+                        </div>
+                        <p class="brand-tagline">
+                            Bridging language fluency and cultural custom integration to create global professional standard opportunities.
+                        </p>
+                        <!-- Modern Minimal Social Network Vector Icon Desks -->
+                        <div class="social-links-row">
+                            <a href="#" class="social-circle-btn" aria-label="Facebook" target="_blank">
+                                <i class="fa-brands fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-circle-btn" aria-label="Instagram" target="_blank">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-circle-btn" aria-label="YouTube" target="_blank">
+                                <i class="fa-brands fa-youtube"></i>
+                            </a>
+                            <a href="#" class="social-circle-btn" aria-label="LinkedIn" target="_blank">
+                                <i class="fa-brands fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Column 2: Quick Explorations Links -->
+                    <div class="footer-column links-column">
+                        <h3 class="footer-heading">Quick Links</h3>
+                        <div class="heading-accent-dot"></div>
+                        <ul class="footer-links-list">
+                            <li><a href="index.html">Home Campus</a></li>
+                            <li><a href="#">Latest News Wire</a></li>
+                            <li><a href="#">Course Programs</a></li>
+                            <li><a href="#">Message For You</a></li>
+                            <li><a href="#">Student Portal Access</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 3: Course Programs Categories Quick-Jump -->
+                    <div class="footer-column links-column">
+                        <h3 class="footer-heading">Our Courses</h3>
+                        <div class="heading-accent-dot"></div>
+                        <ul class="footer-links-list">
+                            <li><a href="#">Beginner Foundation (N5)</a></li>
+                            <li><a href="#">Elementary Mastery (N4)</a></li>
+                            <li><a href="#">Intermediate Fluency (N3)</a></li>
+                            <li><a href="#">Advanced Professional (N2)</a></li>
+                            <li><a href="#">Business Protocols (N1)</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4: Contextual Global Support Contact Center -->
+                    <div class="footer-column contact-column">
+                        <h3 class="footer-heading">Global Support</h3>
+                        <div class="heading-accent-dot"></div>
+                        <p class="contact-info-note">Have questions? Reach out directly via our official communication desks.</p>
+                        <div class="footer-contact-details">
+                            <div class="footer-contact-item">
+                                <span class="footer-contact-icon">📍</span>
+                                <span class="footer-contact-text">123 Education Street, Tokyo Learning Center</span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <span class="footer-contact-icon">📞</span>
+                                <span class="footer-contact-text"><a href="tel:+819012345678">+81 90-1234-5678</a></span>
+                            </div>
+                            <div class="footer-contact-item">
+                                <span class="footer-contact-icon">📧</span>
+                                <span class="footer-contact-text"><a href="mailto:info@sakurajapanese.com">info@sakurajapanese.com</a></span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- /footer-container -->
+            </div> <!-- /footer-upper-wrapper -->
+
+            <!-- Bottom Compliance Sub-Bar -->
+            <div class="footer-bottom-compliance-bar">
+                <div class="compliance-container">
+                    <p class="copyright-notice">
+                        &copy; 2026 Next Frontier Japanese Language School Group. All Rights Reserved.
+                    </p>
+                    <div class="compliance-links">
+                        <a href="#">Privacy Framework</a>
+                        <a href="#">Terms of Institutional Service</a>
+                        <a href="#">Cookie Policies</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- 🚀 NEW: Modern Scroll to Top Button -->
+        <button id="backToTopBtn" class="back-to-top-btn" aria-label="Back to Top">
+            <i class="fa-solid fa-arrow-up"></i>
+        </button>
+
+        <script src="js/global.js"></script>
+        <script src="js/index.js"></script>
+    </body>
+</html>

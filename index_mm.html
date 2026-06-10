@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Next Frontier ဂျပန်ဘာသာစကားသင်တန်းကျောင်း</title>
+    <!-- Google Fonts Connection -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            
+            <!-- Left Side Logo Brand Block -->
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo"/>
+                <span><strong>Next Frontier</strong></span>
+            </div>
+            
+            <!-- Right Side Multi-tier Block -->
+            <div class="header-navigation-column">
+                
+                <!-- Tier 1 Row: Minimal Utility Links Tracker -->
+                <div class="top-utility-bar">
+                    <div class="utility-links">
+                        <a href="#" class="utility-item">အချက်အလက်တောင်းခံရန်</a>
+                        <a href="#" class="utility-item access-btn">ဆက်သွယ်ရန်</a>
+                    </div>
+                </div>
+                
+                <!-- Tier 2 Row: Main Menus + International Call to Action Button -->
+                <div class="main-navigation-row">
+                    <nav class="main-nav">
+                        <div class="nav-menu">
+                            <a href="index_mm.html" class="active">ပင်မစာမျက်နှာ</a>
+                            <a href="#">သတင်းများ</a>
+                            <a href="#">သင်တန်းများ</a>
+                            <a href="#">ကျောင်းအုပ်ကြီး၏သဝဏ်လွှာ</a>
+                        </div>
+                    </nav>
+                    
+                    <!-- Action Controls Section (Houses Language Selector Drawer Toggle) -->
+                    <div class="header-actions">
+                        <div class="language-selector">
+                            <button class="lang-dropdown-trigger" id="langTrigger">
+                                <img src="img/flags/mm.png" alt="Myanmar Flag" class="flag-icon"> 
+                                <span class="lang-text">Myanmar</span>
+                                <span class="chevron-arrow">⯆</span>
+                            </button>
+
+                            <div class="lang-dropdown-menu" id="langMenu">
+                                <a href="index.html" class="lang-item">
+                                    <img src="img/flags/gb.png" alt="UK" class="flag-icon"> English
+                                </a>
+                                <a href="index_jp.html" class="lang-item">
+                                    <img src="img/flags/jp.png" alt="Japan" class="flag-icon"> Japanese
+                                </a>
+                                <a href="index_mm.html" class="lang-item">
+                                    <img src="img/flags/mm.png" alt="Myanmar" class="flag-icon"> Myanmar
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Mobile Hamburger Toggle Drawer Trigger -->
+                        <button class="hamburger-toggle" id="menuToggle" aria-label="Toggle Menu">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </button>
+                    </div>
+                </div> <!-- /main-navigation-row -->
+
+            </div> <!-- /header-navigation-column -->
+        </div>
+    </header>
+
+    <!-- Top Banner / Modern Smooth Image Slider -->
+    <section class="hero-slider-wrapper">
+        <!-- Image Slides Matrix -->
+        <div class="slider-container">
+            <!-- Slide 1 -->
+            <div class="slide active" style="background-image: url('img/banner-7.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>သင်၏ ဂျပန်စာကျွမ်းကျင်မှုခရီးစဉ် ဤနေရာမှ စတင်ပါသည်</h1>
+                    <p>မိခင်ဘာသာစကားပြော ပညာရှင်များထံမှ သင်ယူပြီး ကမ္ဘာလုံးဆိုင်ရာ အခွင့်အလမ်းများကို ဆုပ်ကိုင်လိုက်ပါ။</p>
+                    <a href="#" class="cta-button">ဆက်သွယ်ရန်</a>
+                </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="slide" style="background-image: url('img/banner-10.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>လက်တွေ့အသုံးချ သင်ယူမှုအတွေ့အကြုံများ</h1>
+                    <p>ဂျပန်လူမျိုး ဆရာ၊ ဆရာမများနှင့် တိုက်ရိုက် စကားပြောဆို လေ့ကျင့်နိုင်ပါသည်။</p>
+                    <a href="#" class="cta-button">သင်တန်းများကြည့်ရန်</a>
+                </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="slide" style="background-image: url('img/banner-9.jpg');">
+                <div class="hero-overlay"></div>
+                <div class="hero-content">
+                    <h1>JLPT စာမေးပွဲကို ယုံကြည်မှုအပြည့်ဖြင့် အောင်မြင်ပါ</h1>
+                    <p>N5 မှ N1 အထိ စနစ်တကျ ပြုစုထားသော သင်ရိုးညွှန်းတမ်း လေ့ကျင့်ရေး အစီအစဉ်များ။</p>
+                    <a href="#" class="cta-button">အချိန်ဇယားကြည့်ရန်</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arrow Navigation Controls -->
+        <button class="slider-arrow prev-arrow" aria-label="Previous Slide">❮</button>
+        <button class="slider-arrow next-arrow" aria-label="Next Slide">❯</button>
+
+        <!-- Glassmorphic Indicator Pagination Dots -->
+        <div class="slider-dots-container">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <span class="dot" data-index="2"></span>
+        </div>
+    </section>
+
+    <script src="js/global.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

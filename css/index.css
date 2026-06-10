@@ -1,0 +1,1072 @@
+/* ==========================================================================
+   1. MASTER SLIDER CONTAINER (Fixed Layout Constraints)
+   ========================================================================== */
+.hero-slider-wrapper {
+    position: relative;
+    width: 100%;
+    height: 82vh;          
+    min-height: 600px;     /* Ensures plenty of vertical space on large screens */
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.slider-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* ==========================================================================
+   2. INDIVIDUAL SLIDES (Stacked Absolute Layers Fix)
+   ========================================================================== */
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center 25%;
+    background-repeat: no-repeat;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 1s cubic-bezier(0.25, 1, 0.5, 1), 
+                visibility 1s cubic-bezier(0.25, 1, 0.5, 1);
+    
+    /* Changes to force content container precisely to the absolute bottom-left */
+    display: block;
+    align-items: flex-end;     /* Pins content to the absolute bottom */
+    justify-content: flex-start; /* Pins content to the absolute left */
+    padding: 0;                /* Reset side padding on slide to handle inside card instead */
+    z-index: 1;
+}
+
+/* Trigger Hook for Active Slides */
+.slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 5;
+}
+
+/* ==========================================================================
+   3. MODERN IMAGE OVERLAY LAYER (Crisp Light Protection)
+   ========================================================================== */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Soft premium gradient overlay: slightly darker on the left to shield the text */
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.35) 100%);
+    z-index: 6;
+}
+
+/* ==========================================================================
+   4. PREMIUM MINIMALIST GLASS CARD (Ultra-Clean Design)
+   ========================================================================== */
+.hero-content {
+    position: absolute;        /* Absolutely position inside the slide workspace */
+    bottom: 40px;              /* Lifted slightly (40px) off the absolute edge for breathing room */
+    left: 40px;                /* Kept off edge slightly for pristine premium grid alignments */
+    z-index: 7;
+    max-width: 580px;
+    width: calc(100% - 80px);  /* Dynamically tracks full width minus the edge margins */
+    padding: 45px 40px;
+    text-align: left;
+    
+    /* Premium Frosted Glass Setup */
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(25px) saturate(160%);
+    -webkit-backdrop-filter: blur(25px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 24px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.25);
+    
+    /* Motion Entry */
+    transform: translateY(30px);
+    opacity: 0;
+    transition: transform 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Transition Text Inside Active Frames */
+.slide.active .hero-content {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* ==========================================================================
+   5. GEOMETRIC TYPOGRAPHY (Modern, Bold, and Sharp)
+   ========================================================================== */
+.hero-content h1 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 3rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    letter-spacing: -0.03em;
+    color: #ffffff;
+}
+
+.hero-content p {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 28px;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Premium Dynamic Action Button */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    background-color: #bc002d; /* Authentic crimson brand color */
+    color: #ffffff;
+    padding: 12px 32px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: -0.01em;
+    border-radius: 50px;
+    box-shadow: 0 10px 25px rgba(188, 0, 45, 0.3);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta-button:hover {
+    background-color: #e60037;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 14px 30px rgba(188, 0, 45, 0.45);
+}
+
+/* ==========================================================================
+   6. FLOATING MINIMAL SLIDER ARROWS
+   ========================================================================== */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-size: 1rem;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slider-arrow:hover {
+    background: #ffffff;
+    color: #bc002d;
+    border-color: #ffffff;
+}
+
+.prev-arrow { left: 24px; }
+.next-arrow { right: 24px; }
+
+/* ==========================================================================
+   7. SLIDER INDICATOR DOTS
+   ========================================================================== */
+.slider-dots-container {
+    position: absolute;
+    bottom: 24px;
+    right: 8%; /* Anchored neatly to match text flow baseline alignment */
+    display: flex;
+    gap: 8px;
+    z-index: 10;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dot:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.dot.active {
+    background: #ffffff;
+    width: 24px; /* Extended active pill animation */
+    border-radius: 4px;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE MEDIA ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 992px) {
+    .slide { padding-left: 5%; }
+    .hero-content { max-width: 500px; }
+    .hero-content h1 { font-size: 2.5rem; }
+}
+
+@media (max-width: 768px) {
+    .hero-slider-wrapper { 
+        height: 80vh;          /* Keeps it quite tall on mobile layout grids */
+        min-height: 500px;
+    }
+    .slide { padding-left: 0; justify-content: center; } /* Center text card on mobile */
+    .hero-content { 
+        bottom: 20px;          /* Tighter margins on smaller screen frameworks */
+        left: 20px;
+        width: calc(100% - 40px);
+        padding: 30px 24px; 
+        border-radius: 16px; 
+    }
+    .hero-content h1 { font-size: 2.1rem; }
+    .hero-content p { font-size: 1rem; }
+    .slider-arrow { display: none; } /* Hide heavy arrows on small mobile frames */
+    .slider-dots-container { left: 50%; right: auto; transform: translateX(-50%); }
+}
+
+/* ==========================================================================
+   🚀 UPDATED: ABOUT US SECTION (Crimson Brand Theme Integration)
+   ========================================================================== */
+.about-section {
+    width: 100%;
+    padding: 100px 24px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.about-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 80px;
+    align-items: center;
+}
+
+/* ==========================================================================
+   LEFT CONTAINER: IMAGE INTERACTIVE MATRIX GRAPHICS
+   ========================================================================== */
+.about-media-block {
+    position: relative;
+    width: 100%;
+    height: 520px;
+}
+
+.about-image-wrapper {
+    width: 100%;
+    height: 100%;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+}
+
+.about-main-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-media-block:hover .about-main-img {
+    transform: scale(1.04);
+}
+
+/* 🚀 CHANGED: Floating Glassmorphic Overlay Badge Crimson Accent */
+.glass-badge {
+    position: absolute;
+    bottom: -25px;
+    right: -25px;
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px) saturate(140%);
+    -webkit-backdrop-filter: blur(20px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 24px 32px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(188, 0, 45, 0.06); /* Soft Crimson shadow depth */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    z-index: 10;
+}
+
+.badge-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #bc002d; /* 🚀 Swapped to authentic core crimson brand color */
+    letter-spacing: -0.03em;
+    line-height: 1;
+}
+
+.badge-text {
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.1em; 
+}
+
+/* ==========================================================================
+   RIGHT CONTAINER: TYPOGRAPHY, FONT SPACING, AND SPATIAL DENSITY RULES
+   ========================================================================== */
+.about-content-block {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.section-tagline {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #bc002d; /* 🚀 Swapped to crimson tagline text color */
+    letter-spacing: 0.15em; 
+    margin-bottom: 12px;
+    display: block;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #0f172a; 
+    line-height: 1.2;
+    letter-spacing: -0.02em; 
+    margin-bottom: 16px;
+}
+
+/* 🚀 CHANGED: Accent Line block element match */
+.title-accent-line {
+    width: 60px;
+    height: 4px;
+    background-color: #bc002d; /* 🚀 Swapped to core crimson background bar tint */
+    border-radius: 2px;
+    margin-bottom: 28px;
+}
+
+.about-description {
+    font-size: 1.08rem;
+    font-weight: 400;
+    line-height: 1.65; 
+    color: #475569;
+    letter-spacing: -0.005em;
+    margin-bottom: 36px;
+}
+
+/* ==========================================================================
+   FEATURES CHECKLIST STYLING MATRIX
+   ========================================================================== */
+.features-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 40px;
+}
+
+.feature-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 20px;
+    background-color: #f8fafc; 
+    border-radius: 12px;
+    border: 1px solid #f1f5f9;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Beautiful dynamic translate movement response tracking */
+.feature-card:hover {
+    background-color: #ffffff;
+    border-color: rgba(188, 0, 45, 0.2); /* 🚀 Subtle soft crimson edge boundaries outline */
+    box-shadow: 0 10px 25px rgba(188, 0, 45, 0.04);
+    transform: translateX(6px);
+}
+
+/* 🚀 CHANGED: Rounded circle checklist element adjustments */
+.feature-icon-box {
+    width: 28px;
+    height: 28px;
+    background-color: rgba(188, 0, 45, 0.08); /* 🚀 Soft translucent crimson pool overlay layer fill */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bc002d; /* 🚀 Inline checkmark vectors colors swapped to crimson */
+    flex-shrink: 0;
+}
+
+.check-svg {
+    width: 14px;
+    height: 14px;
+}
+
+.feature-text-box h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #334155;
+    letter-spacing: -0.01em;
+}
+
+/* 🚀 CHANGED: Sub text linking anchor color updates */
+.about-cta {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #bc002d; /* 🚀 Swapped to crimson link anchor */
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.about-cta:hover {
+    color: #e60037; /* 🚀 Vibrant bright hover red match */
+    opacity: 0.95;
+}
+
+/* ==========================================================================
+   📱 MOBILE RESPONSIVE MEDIA ADAPTATION BOUNDARIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .about-container {
+        grid-template-columns: 1fr; 
+        gap: 60px;
+    }
+    .about-media-block {
+        height: 400px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    .glass-badge {
+        right: 10px; 
+    }
+}
+
+@media (max-width: 640px) {
+    .about-section {
+        padding: 60px 16px;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+    .about-media-block {
+        height: 300px;
+    }
+    .glass-badge {
+        padding: 16px 20px;
+        bottom: -15px;
+        right: -10px;
+    }
+    .badge-number {
+        font-size: 1.7rem;
+    }
+    .feature-card {
+        padding: 12px 16px;
+    }
+}
+
+/* ==========================================================================
+   🚀 NEW: COURSE CATEGORY GRID SECTION (Crimson Layout Aesthetics)
+   ========================================================================== */
+.courses-section {
+    width: 100%;
+    padding: 100px 24px;
+    background-color: #f8fafc; /* Subtle grey canvas to separate from white background zones */
+}
+
+.courses-container {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+/* Centered Header Overrides */
+.section-center-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.centered-line {
+    margin: 0 auto 24px auto !important;
+}
+
+/* Grid Matrix Framework Layout rules */
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3-Column horizontal row partition layout */
+    gap: 32px;
+}
+
+/* ==========================================================================
+   COURSE CARD INTERACTIVE BLOCKS
+   ========================================================================== */
+.course-card {
+    background-color: #ffffff;
+    border-radius: 20px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.course-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+/* Image bounding container workspace */
+.course-image-box {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    background-color: #0f172a;
+}
+
+.course-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.course-card:hover .course-image-box img {
+    transform: scale(1.06);
+    filter: saturate(110%);
+}
+
+/* Level Badges */
+.course-level-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    background-color: #bc002d; /* Authentic core brand red accent code */
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 30px;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 10px rgba(188, 0, 45, 0.25);
+}
+
+/* ==========================================================================
+   CARD TYPOGRAPHY, PADDING CONTENT & PRICING FOOTER ROWS
+   ========================================================================== */
+.course-content-box {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Standardizes uniform equal card height footprints across rows */
+}
+
+.course-meta {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+}
+
+.meta-item {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+}
+
+.course-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    margin-bottom: 12px;
+    transition: color 0.2s ease;
+}
+
+.course-card:hover .course-card-title {
+    color: #bc002d; /* Title text changes to crimson color on parent element hover */
+}
+
+.course-card-text {
+    font-size: 0.92rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #475569;
+    margin-bottom: 24px;
+}
+
+/* Card footer line layout grid placement tracking */
+.course-footer-row {
+    margin-top: auto; /* Forces content flush against absolute bottom of container box workspace */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 20px;
+    border-top: 1px solid #f1f5f9;
+}
+
+.course-price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.02em;
+}
+
+.course-price small {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: #64748b;
+    letter-spacing: 0;
+}
+
+.course-action-link {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #bc002d;
+    text-decoration: none;
+    letter-spacing: -0.01em;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.course-action-link:hover {
+    opacity: 0.85;
+}
+
+/* ==========================================================================
+   📱 MOBILE VIEWPORT ADAPTIVE MEDIA BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .courses-grid {
+        grid-template-columns: repeat(2, 1fr); /* Reducibility down to 2 columns on tablets */
+        gap: 24px;
+    }
+}
+
+@media (max-width: 680px) {
+    .courses-section {
+        padding: 60px 16px;
+    }
+    .courses-grid {
+        grid-template-columns: 1fr; /* Full width 1 column stack mapping layout on mobile screen viewports */
+    }
+    .course-content-box {
+        padding: 20px;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* ==========================================================================
+   🚀 NEW: INSTRUCTORS CAROUSEL (Infinite CSS Glider Engine Layout Rules)
+   ========================================================================== */
+.instructors-section {
+    width: 100%;
+    padding: 100px 0; /* Left and right padding is set to 0 so the rolling timeline extends off-screen */
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.instructors-container {
+    width: 100%;
+}
+
+/* ==========================================================================
+   THE INFINITE ROLLING CAROUSEL RIG (Pure CSS Ultra Smooth GPU Acceleration)
+   ========================================================================== */
+.carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+    width: max-content; /* Extends automatically to wrap all cards side-by-side */
+    
+    /* 🚀 ATTACH THE ENDLESS TIMELINE GLIDER */
+    animation: smoothInfiniteGlidetrack 35s linear infinite;
+}
+
+/* 🚀 Hover Pause Mechanic: Freezes carousel progression smoothly when a user hovers a mouse over any teacher card profile */
+.carousel-track:hover {
+    animation-play-state: paused;
+}
+
+/* GPU Matrix Coordinates calculations handler */
+@keyframes smoothInfiniteGlidetrack {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        /* Loops exactly halfway when the first 4 nodes pass the viewpoint track */
+        transform: translate3d(calc(-50% - 15px), 0, 0); 
+    }
+}
+
+/* ==========================================================================
+   PREMIUM GLASS TEXTURED TEACHER PROFILE CARDS
+   ========================================================================== */
+.instructor-card {
+    width: 310px; /* Fixed profile structural aspect box geometry constraint */
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.02);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.4s ease;
+}
+
+/* Interactive Hover focus states mapping values */
+.instructor-card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(188, 0, 45, 0.2);
+    box-shadow: 0 20px 40px rgba(188, 0, 45, 0.05); /* Soft glowing brand red accent shadow */
+}
+
+/* Profile Picture Matrix Box */
+.instructor-img-box {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+}
+
+.instructor-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.instructor-card:hover .instructor-img-box img {
+    transform: scale(1.04);
+}
+
+/* Protective ambient lighting shade filter drop over pictures */
+.instructor-overlay-tint {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, transparent 60%, rgba(15, 23, 42, 0.4) 100%);
+}
+
+/* ==========================================================================
+   TEACHER CARD TYPOGRAPHY & CARD DATA PADDING
+   ========================================================================== */
+.instructor-info-box {
+    padding: 24px;
+    text-align: left;
+}
+
+.instructor-role {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #bc002d; /* Authentic red brand anchor */
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.instructor-name {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+.instructor-bio {
+    font-size: 0.88rem;
+    font-weight: 400;
+    line-height: 1.55;
+    color: #475569;
+    letter-spacing: -0.005em;
+}
+
+/* ==========================================================================
+   🚀 NEW: CAROUSEL PAGINATION DOTS (Minimalist Pill Layout Architecture)
+   ========================================================================== */
+.carousel-pagination-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 36px;
+    width: 100%;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #cbd5e1; /* Soft neutral grey baseline tint */
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.carousel-dot:hover {
+    background-color: #94a3b8;
+}
+
+/* Crimson Expanded Accent Active Indicator Pill Frame */
+.carousel-dot.active {
+    background-color: #bc002d; /* Authentic red branding accent match */
+    width: 28px; /* Smooth oblong horizontal expansion visual */
+    border-radius: 5px;
+}
+
+/* ==========================================================================
+   📱 MOBILE VIEWPORT TRACK RESPONSIVE SCALING ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 768px) {
+    .instructors-section {
+        padding: 60px 0;
+    }
+    .instructor-card {
+        width: 270px; /* Reduces footprint card sizes on smaller screens to prevent overcrowding space */
+    }
+    .instructor-img-box {
+        height: 270px;
+    }
+    .instructor-info-box {
+        padding: 20px;
+    }
+    .carousel-track {
+        /* Speeds it up slightly on tiny mobile frames so readability remains steady */
+        animation-duration: 25s; 
+    }
+}
+
+/* ==========================================================================
+   🚀 NEW: CONTACT & PROFILE INTERFACE MODULE (Crimson UI/UX Architecture)
+   ========================================================================== */
+.contact-profile-section {
+    width: 100%;
+    padding: 100px 24px;
+    background-color: #f8fafc; /* Subtle grey contrast baseline */
+    overflow: hidden;
+}
+
+.contact-profile-container {
+    max-width: 1100px; /* Refined width metric for premium column layout reading */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Uniform margins between vertical content segments */
+}
+
+.contact-vertical-block,
+.access-vertical-block,
+.company-profile-matrix-block {
+    width: 100%;
+    /* 🚀 FIX: Generates clear offset safety padding so sticky top menus don't cover text titles */
+    scroll-margin-top: 110px; 
+}
+
+/* ==========================================================================
+   GET IN TOUCH CARD STYLES
+   ========================================================================== */
+.contact-info-panel {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 28px;
+    padding: 48px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+    text-align: left;
+}
+
+.contact-item-rail {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 🚀 Two-by-two symmetric square grid array */
+    gap: 20px;
+    margin-top: 24px;
+}
+
+.contact-meta-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 24px;
+    background-color: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 16px;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contact-meta-card:hover {
+    background-color: #ffffff;
+    border-color: rgba(188, 0, 45, 0.2); 
+    box-shadow: 0 10px 25px rgba(188, 0, 45, 0.03);
+    transform: translateX(6px); /* Interactive translate layout sliding transition */
+}
+
+.meta-icon-bubble {
+    width: 44px;
+    height: 44px;
+    background-color: rgba(188, 0, 45, 0.06); 
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.15rem;
+    flex-shrink: 0;
+}
+
+.meta-text-content h4 {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+    text-align: left;
+}
+
+.meta-text-content p, .meta-text-content p a {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    text-align: left;
+}
+
+.meta-text-content p a:hover {
+    color: #bc002d;
+}
+
+/* ==========================================================================
+   GOOGLE MAP PLACEMENT STYLES
+   ========================================================================== */
+.access-vertical-block {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 28px;
+    padding: 48px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+    text-align: left;
+}
+
+.access-vertical-block .map-wrapper {
+    width: 100%;
+    height: 480px; /* Immersive view height for column presence */
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 24px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.access-vertical-block .map-wrapper:hover {
+    transform: scale(1.01);
+}
+
+/* ==========================================================================
+   COMPANY DATA PROFILE TABLE MODULES
+   ========================================================================== */
+.company-profile-matrix-block {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 28px;
+    padding: 48px;
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.02);
+    text-align: left;
+}
+
+.table-block-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: -0.01em;
+    margin-bottom: 24px;
+    padding-left: 12px;
+    border-left: 4px solid #bc002d; /* Identity crimson line bar */
+}
+
+.table-responsive-viewport {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.profile-data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.profile-data-table tr {
+    border-bottom: 1px solid #f1f5f9;
+    transition: background-color 0.2s ease;
+}
+
+.profile-data-table tr:last-child {
+    border-bottom: none;
+}
+
+.profile-data-table tr:hover {
+    background-color: #f8fafc;
+}
+
+.table-label-header {
+    width: 30%;
+    padding: 20px 16px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #475569;
+}
+
+.table-data-node {
+    width: 70%;
+    padding: 20px 16px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+/* ==========================================================================
+   📱 MOBILE VIEWPORTS RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 900px) {
+    .contact-item-rail {
+        grid-template-columns: 1fr; /* Collapses down into single listings stack rules */
+    }
+}
+
+@media (max-width: 640px) {
+    .contact-profile-section {
+        padding: 60px 16px;
+    }
+    .contact-info-panel, .access-vertical-block, .company-profile-matrix-block {
+        padding: 28px 20px;
+        border-radius: 20px;
+    }
+    .access-vertical-block .map-wrapper {
+        height: 320px;
+    }
+    .table-label-header, .table-data-node {
+        display: block;
+        width: 100%;
+        padding: 10px 8px;
+    }
+    .table-label-header {
+        background-color: #f8fafc;
+        border-radius: 6px;
+        margin-top: 10px;
+    }
+}

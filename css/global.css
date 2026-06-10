@@ -1,0 +1,758 @@
+/* ==========================================================================
+   1. GLOBAL RESET (Overrides Default Browser User Agent Styles)
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', 'Noto Sans JP', 'Noto Sans Myanmar', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #1e293b;
+    /* 🚀 Explicitly removes the user agent 8px margin */
+    margin: 0; 
+    padding: 0;
+}
+
+/* ==========================================================================
+   JAPANESE COLLEGE INSPIRED NAVIGATION HEADER STYLE RULES
+   ========================================================================== */
+
+.site-header {
+    background-color: rgba(255, 255, 255, 0.85); 
+    backdrop-filter: blur(20px);                
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    
+    /* 🚀 CRITICAL: Smooth transition so the shadow doesn't snap abruptly */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0); /* Invisible initial shadow state */
+}
+
+/* ==========================================================================
+   🚀 NEW: SCROLLED HEADER STATE (Triggers dynamically via JavaScript)
+   ========================================================================== */
+.site-header.is-scrolled {
+    background-color: #ffffff; /* Turns into a clean, solid white sheet */
+    border-color: rgba(0, 0, 0, 0.03); /* Softens the bottom border outline line */
+    
+    /* Premium layered drop shadow to separate it beautifully from white sections */
+    box-shadow: 
+        0 4px 20px rgba(15, 23, 42, 0.25),
+        0 10px 30px rgba(15, 23, 42, 0.30);
+}
+
+.header-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: flex-end; Aligns baseline tracks neatly with tall logos */
+    /* padding: 12px 24px;  */
+    padding-top: 12px;
+}
+
+/* Logo Alignment Parameters */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px; 
+    font-size: 2rem;
+    color: #1e293b;
+    flex-shrink: 0;
+}
+
+.logo img {
+    height: 85px;      
+    width: auto;       
+    object-fit: contain;
+}
+
+.logo strong {
+    color: #bc002d; /* Elegant corporate education blue shade */
+    font-weight: 700;
+}
+
+/* Right Column Structural Frame */
+.header-navigation-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    gap: 10px;
+}
+
+/* ==========================================================================
+   TIER 1 ROW STYLES: MINIMAL UTILITY ALIGNMENTS
+   ========================================================================== */
+.top-utility-bar {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.utility-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.utility-item {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #475569; /* Soft dark slate look matching reference */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.utility-item:hover {
+    color: #0066cc;
+}
+
+/* Minimal Blue Button Block for the Access menu item */
+.utility-item.access-btn {
+    background-color: #0066cc; 
+    color: #ffffff !important;
+    padding: 4px 14px;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    transition: background-color 0.2s ease;
+}
+
+.utility-item.access-btn:hover {
+    background-color: #0052a3;
+}
+
+/* ==========================================================================
+   TIER 2 ROW STYLES: MAIN HORIZONTAL TRACK MENUS
+   ========================================================================== */
+.main-navigation-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #515154;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: all 0.25s ease;
+}
+
+.nav-menu a:hover {
+    color: #bc002d;
+    background-color: rgba(188, 0, 45, 0.05);
+}
+
+.nav-menu a.active {
+    color: #bc002d;
+    background-color: rgba(188, 0, 45, 0.08);
+}
+
+/* 🚀 NEW: Modern Soft Purple Pill Callout Button */
+.nav-menu a.intl-students-btn {
+    background-color: #e2d9f3; /* Authentic soft lavender-purple hue */
+    color: #4c1d95 !important; /* Deep dark indigo purple text */
+    padding: 8px 18px;
+    border-radius: 50px;       /* True smooth pill geometric edge profile */
+    font-weight: 700;
+    font-size: 0.82rem;
+    margin-left: 8px;
+    border: 1px solid rgba(76, 29, 149, 0.05);
+}
+
+.nav-menu a.intl-students-btn:hover {
+    background-color: #d3c5ed;
+    color: #4c1d95;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* ==========================================================================
+   LANGUAGE DROPDOWN STYLING MODULES
+   ========================================================================== */
+.language-selector {
+    position: relative;
+    display: inline-block;
+}
+
+.lang-dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 6px 10px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: #334155;
+    transition: all 0.2s ease;
+}
+
+.lang-dropdown-trigger:hover {
+    border-color: #bc002d;
+}
+
+.flag-icon {
+    width: 16px;
+    height: 11px;
+    object-fit: cover;
+    border-radius: 1px;
+}
+
+.chevron-arrow {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    transition: transform 0.2s ease;
+}
+
+.language-selector.active .chevron-arrow {
+    transform: rotate(180deg);
+}
+
+.lang-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 4px);
+    right: 0;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    width: 130px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: all 0.2s ease;
+    z-index: 1010;
+}
+
+.language-selector.active .lang-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.lang-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    text-decoration: none;
+    color: #475569;
+    font-size: 0.82rem;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+}
+
+.lang-item:hover {
+    background-color: #f1f5f9;
+    color: #bc002d;
+}
+
+/* ==========================================================================
+   MOBILE VIEWPORT BREAKPOINT CONFIGURATIONS
+   ========================================================================== */
+.hamburger-toggle {
+    display: none; 
+    flex-direction: column;
+    justify-content: space-between;
+    width: 20px;
+    height: 14px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 2001; 
+    padding: 0;
+}
+
+.hamburger-toggle .bar {
+    width: 100%;
+    height: 2px;
+    background-color: #1e293b;
+    border-radius: 1px;
+    transition: transform 0.3s ease, opacity 0.2s ease;
+}
+
+@media (max-width: 992px) {
+    .top-utility-bar {
+        display: none; 
+    }
+    
+    .hamburger-toggle {
+        display: flex; 
+    }
+
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; 
+        width: 100%;
+        height: 100vh;
+        background: #ffffff;
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.35s ease;
+    }
+
+    .main-nav.menu-open {
+        right: 0; 
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+        width: 100%;
+        padding: 0 24px;
+    }
+
+    .nav-menu a {
+        font-size: 1.2rem; 
+        font-weight: 600;
+        width: 100%;
+        padding: 12px 0;
+        display: block;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .nav-menu a.intl-students-btn {
+        margin-left: 0;
+        margin-top: 12px;
+        border-radius: 8px;
+    }
+    
+    .hamburger-toggle.active .bar:nth-child(1) { transform: translateY(6px) rotate(45deg); background-color: #0066cc; }
+    .hamburger-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .hamburger-toggle.active .bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); background-color: #0066cc; }
+    
+    body.no-scroll { overflow: hidden; }
+}
+
+@media (max-width: 768px) {
+    .hamburger-toggle {
+        display: flex; /* Show exclusively inside active mobile viewports */
+    }
+
+    /* Transform Main Navigation into a Premium Frosted Glass Drawer */
+    .main-nav {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Completely hidden off-screen layout state by default */
+        width: 100%;
+        height: 100vh;
+        background: rgba(255, 255, 255, 0.94);
+        backdrop-filter: blur(25px) saturate(180%);
+        -webkit-backdrop-filter: blur(25px) saturate(180%);
+        z-index: 2000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: right 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    /* Open State Trigger Hook */
+    .main-nav.menu-open {
+        right: 0; /* Slides smoothly into full-frame focus */
+    }
+
+    .nav-menu {
+        flex-direction: column;
+        gap: 24px;
+        text-align: center;
+        width: 100%;
+        padding: 0 40px;
+    }
+
+    .nav-menu a {
+        font-size: 1.4rem; /* Larger, high-contrast touch friendly links */
+        font-weight: 600;
+        width: 100%;
+        padding: 12px 0;
+        display: block;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        border-radius: 0;
+    }
+    
+    .nav-menu a:hover, .nav-menu a.active {
+        background-color: transparent;
+        color: #bc002d;
+    }
+
+    /* 3. Hamburger "X" Morph Animations */
+    .hamburger-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        background-color: #bc002d; /* Changes to crimson on open */
+    }
+
+    .hamburger-toggle.active .bar:nth-child(2) {
+        opacity: 0; /* Fades center line out */
+    }
+
+    .hamburger-toggle.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        background-color: #bc002d;
+    }
+    
+    /* Disable scrolling when layout menu panel is active */
+    body.no-scroll {
+        overflow: hidden;
+    }
+}
+
+/* ==========================================================================
+   🚀 NEW: GLOBAL WEBSITE FOOTER (Premium Minimalist Architecture)
+   ========================================================================== */
+.site-footer {
+    width: 100%;
+    background-color: #0f172a; /* Sophisticated deep slate-charcoal values background */
+    color: #94a3b8; /* Crisp clear low-contrast reading tones */
+    border-top: 1px solid #1e293b;
+}
+
+.footer-upper-wrapper {
+    padding: 80px 24px;
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1340px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr 0.8fr 1.2fr; /* Balanced uneven desktop layout matrix divisions */
+    gap: 48px;
+}
+
+/* ==========================================================================
+   COLUMN SECTIONS STRUCTURAL STYLES
+   ========================================================================== */
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Logo Alignment Parameters Overrides */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-logo img {
+    height: 38px;
+    width: auto;
+    object-fit: contain;
+   /* filter: brightness(0) invert(1); /* Forces your colored graphic cleanly into white lines grid output */
+}
+
+.footer-logo strong {
+    font-size: 1.2rem;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.brand-tagline {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #94a3b8;
+    margin-bottom: 28px;
+    max-width: 320px;
+}
+
+/* Headings Structures */
+.footer-heading {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #ffffff;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+}
+
+/* Minimalist Identity Brand Color Callout Tab Bar Under Headings */
+.heading-accent-dot {
+    width: 16px;
+    height: 3px;
+    background-color: #bc002d; /* Crimson signature accent bar integration matching your school logo identity */
+    border-radius: 2px;
+    margin-bottom: 24px;
+}
+
+/* Link Lists Tracks Options */
+.footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links-list li a {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #94a3b8;
+    text-decoration: none;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    display: inline-block;
+}
+
+/* Interactive Slide Left Transitions On Hover Links */
+.footer-links-list li a:hover {
+    color: #ffffff;
+    transform: translateX(4px); /* 🚀 Smooth on-hover slide animation */
+}
+
+/* Contact Desks Support Fields Columns */
+.contact-info-note {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.footer-contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-contact-icon {
+    font-size: 0.95rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.footer-contact-text {
+    font-size: 0.88rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: #cbd5e1;
+}
+
+.footer-contact-text a {
+    color: #cbd5e1;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-contact-text a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   MICRO-INTERACTIVE SOCIAL NETWORK CIRCLE HOVER CALLOUT BUTTONS
+   ========================================================================== */
+/* ==========================================================================
+   UPDATED: MICRO-INTERACTIVE SOCIAL ICONS
+   ========================================================================== */
+.social-links-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 10px;
+}
+
+.social-circle-btn {
+    width: 40px;
+    height: 40px;
+    background-color: #1e293b;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    
+    /* Smooth transition for background transform and scale filters */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Style the icon vectors inside the circle buttons */
+.social-circle-btn i {
+    font-size: 1rem;
+    color: #cbd5e1;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
+}
+
+/* Interactive Hover Trigger Effects */
+.social-circle-btn:hover {
+    background-color: #bc002d; /* Identity base red fill swap */
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(188, 0, 45, 0.3);
+}
+
+.social-circle-btn:hover i {
+    color: #ffffff;
+    transform: scale(1.1); /* Subtle clean expansion click simulation */
+}
+
+/* ==========================================================================
+   BOTTOM COMPLIANCE SUB-BAR GRID (Legal Inset Elements Alignment Settings)
+   ========================================================================== */
+.footer-bottom-compliance-bar {
+    width: 100%;
+    padding: 24px;
+    background-color: #0b0f19; /* Solid deep baseline black to frame document structure splits */
+    border-top: 1px solid rgba(255, 255, 255, 0.03);
+}
+
+.compliance-container {
+    max-width: 1340px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright-notice {
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: #64748b;
+}
+
+.compliance-links {
+    display: flex;
+    gap: 24px;
+}
+
+.compliance-links a {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.compliance-links a:hover {
+    color: #94a3b8;
+}
+
+/* ==========================================================================
+   📱 MOBILE ADAPTIVE VIEWPORTS BREAKPOINTS MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr); /* Reducibility down to 2 equal column matrix divisions on medium tablets profiles */
+        gap: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .footer-upper-wrapper {
+        padding: 50px 16px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr; /* Complete fallback stack division row system on thin smartphones frames screens layout */
+        gap: 36px;
+    }
+    .compliance-container {
+        flex-direction: column;
+        gap: 14px;
+        text-align: center;
+    }
+    .compliance-links {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+}
+
+/* ==========================================================================
+   🚀 NEW: BACK TO TOP BUTTON (Premium Crimson UI/UX)
+   ========================================================================== */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 46px;
+    height: 46px;
+    background-color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+    color: #bc002d; /* Core crimson brand color */
+    font-size: 1.1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+    
+    /* Initially hidden states */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(15px);
+    
+    /* Fluid timing transitions */
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Active Class (Triggered by JavaScript) */
+.back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Premium Hover State Interactions */
+.back-to-top-btn:hover {
+    background-color: #bc002d;
+    color: #ffffff;
+    border-color: #bc002d;
+    transform: translateY(-4px); /* Interactive lift animation */
+    box-shadow: 0 8px 20px rgba(188, 0, 45, 0.3);
+}
+
+/* Mobile responsive optimization adjustments */
+@media (max-width: 640px) {
+    .back-to-top-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 0.95rem;
+    }
+}
+
+
+
