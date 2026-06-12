@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+         <title>Next Frontier ဂျပန်ဘာသာစကားသင်တန်းကျောင်း</title>
+        <!-- Google Fonts Connection -->
+        <link rel="preconnect" href="https://googleapis.com">
+        <link rel="preconnect" href="https://gstatic.com" crossorigin>
+        <link href="https://googleapis.com/css2?family=Noto+Sans+Myanmar:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/index.css">
+
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+        <style>
+
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        }
+
+        body{
+        font-family:'Poppins',sans-serif;
+        background:#f4f6f9;
+        color:#333;
+        }
+        /* Navigation */
+
+        .navbar{
+            position:sticky;
+            top:0;
+            z-index:1000;
+            background:white;
+            box-shadow:0 2px 15px rgba(0,0,0,.08);
+        }
+
+        .nav-container{
+            max-width:1200px;
+            margin:auto;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:15px 20px;
+        }
+
+        .logo{
+            text-decoration:none;
+            font-size:24px;
+            font-weight:700;
+            color:#0f4c81;
+        }
+
+        .nav-menu{
+            list-style:none;
+            display:flex;
+            gap:25px;
+        }
+
+        .nav-menu a{
+            text-decoration:none;
+            color:#333;
+            font-weight:500;
+            transition:.3s;
+        }
+
+        .nav-menu a:hover{
+            color:#0f4c81;
+        }
+
+        .nav-menu a.active{
+            color:#0f4c81;
+            border-bottom:3px solid #0f4c81;
+            padding-bottom:5px;
+        }
+
+        .header{
+        position:relative;
+        background-image:url('https://images.unsplash.com/photo-1504711434969-e33886168f5c');
+        background-size:cover;
+        background-position:center;
+        background-repeat:no-repeat;
+        color:white;
+        padding:120px 20px;
+        text-align:center;
+        overflow:hidden;
+        }
+
+        .header::before{
+        content:"";
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,0.55);
+        }
+
+        .header h1,
+        .header p{
+        position:relative;
+        z-index:2;
+        }
+
+        .header h1{
+        font-size:48px;
+        margin-bottom:15px;
+        text-shadow:0 2px 10px rgba(0,0,0,.4);
+        }
+
+        .header p{
+        font-size:20px;
+        opacity:.95;
+        }
+
+        .header h1{
+        font-size:42px;
+        margin-bottom:10px;
+        }
+
+        .header p{
+        font-size:18px;
+        opacity:.9;
+        }
+
+        .container{
+        max-width:1200px;
+        margin:auto;
+        padding:30px 20px;
+        }
+
+        .search-box{
+        margin-bottom:30px;
+        }
+
+        .search-box input{
+        width:100%;
+        padding:15px;
+        border:1px solid #ddd;
+        border-radius:10px;
+        font-size:16px;
+        }
+
+        /* Featured */
+
+        .featured{
+        background:white;
+        border-radius:15px;
+        overflow:hidden;
+        margin-bottom:30px;
+        box-shadow:0 5px 20px rgba(0,0,0,.08);
+        cursor:pointer;
+        }
+
+        .featured-image{
+        height:350px;
+        background:url('https://picsum.photos/1200/500');
+        background-size:cover;
+        background-position:center;
+        }
+
+        .featured-content{
+        padding:25px;
+        }
+
+        .featured-title{
+        font-size:30px;
+        color:#0f4c81;
+        margin-bottom:15px;
+        }
+
+        .featured-date{
+        color:#777;
+        margin-bottom:10px;
+        }
+
+        /* Cards */
+
+        .news-grid{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+        gap:25px;
+        }
+
+        .news-card{
+        background:white;
+        border-radius:15px;
+        overflow:hidden;
+        box-shadow:0 5px 15px rgba(0,0,0,.08);
+        transition:.3s;
+        }
+
+        .news-card:hover{
+        transform:translateY(-5px);
+        }
+
+        .card-image{
+        height:200px;
+        background:url('https://picsum.photos/600/400');
+        background-size:cover;
+        }
+
+        .card-body{
+        padding:20px;
+        }
+
+        .news-date{
+        font-size:13px;
+        color:#777;
+        margin-bottom:10px;
+        }
+
+        .news-title{
+        font-size:22px;
+        color:#0f4c81;
+        margin-bottom:15px;
+        }
+
+        .news-content{
+        color:#555;
+        line-height:1.7;
+        margin-bottom:20px;
+        }
+
+        .read-btn{
+        background:#0f4c81;
+        color:white;
+        border:none;
+        padding:10px 15px;
+        border-radius:8px;
+        cursor:pointer;
+        }
+
+        /* Pagination */
+
+        .pagination{
+        display:flex;
+        justify-content:center;
+        gap:10px;
+        margin-top:40px;
+        flex-wrap:wrap;
+        }
+
+        .pagination button{
+        width:45px;
+        height:45px;
+        border:none;
+        border-radius:8px;
+        cursor:pointer;
+        background:white;
+        box-shadow:0 2px 8px rgba(0,0,0,.08);
+        }
+
+        .pagination button.active{
+        background:#0f4c81;
+        color:white;
+        }
+
+        /* Modal */
+
+        .modal{
+        display:none;
+        position:fixed;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background:rgba(0,0,0,.7);
+        z-index:999;
+        overflow:auto;
+        padding:20px;
+        }
+
+        .modal-content{
+        background:white;
+        max-width:900px;
+        margin:40px auto;
+        border-radius:15px;
+        padding:30px;
+        position:relative;
+        }
+
+        .close{
+        position:absolute;
+        right:20px;
+        top:10px;
+        font-size:35px;
+        cursor:pointer;
+        }
+
+        .modal-title{
+        font-size:32px;
+        margin-bottom:15px;
+        color:#0f4c81;
+        }
+
+        .modal-date{
+        color:#777;
+        margin-bottom:20px;
+        }
+
+        .modal-text{
+        line-height:1.9;
+        }
+
+        /* Footer */
+
+        .footer{
+        background:#111;
+        color:#ccc;
+        padding:25px;
+        text-align:center;
+        margin-top:50px;
+        }
+
+        .loading{
+        text-align:center;
+        padding:50px;
+        }
+
+        @media(max-width:768px){
+
+        .header h1{
+        font-size:30px;
+        }
+
+        .featured-title{
+        font-size:24px;
+        }
+
+        .news-title{
+        font-size:20px;
+        }
+
+        }
+        .modal {
+        position: fixed;
+        z-index: 99999; 
+        }
+
+        </style>
+
+    </head>
+
+    <body>
+       <header class="site-header">
+        <div class="header-container">
+        
+        <!-- Logo -->
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo"/>
+            <span><strong>သတင်း Portal</strong></span>
+        </div>
+
+        <div class="header-navigation-column">
+
+            <!-- Top utility bar -->
+            <div class="top-utility-bar">
+                <div class="utility-links">
+                        <a href="#" class="utility-item">အချက်အလက်တောင်းခံရန်</a>
+                        <a href="#" class="utility-item access-btn">ဆက်သွယ်ရန်</a>
+                </div>
+            </div>
+
+            <!-- Main navigation -->
+            <div class="main-navigation-row">
+                <nav class="main-nav">
+                    <div class="nav-menu">
+                        <a href="index_mm.html" class="active">ပင်မစာမျက်နှာ</a>
+                        <a href="news_mm.html">သတင်းများ</a>
+                        <a href="#">သင်တန်းများ</a>
+                        <a href="#">ကျောင်းအုပ်ကြီး၏သဝဏ်လွှာ</a>
+                    </div>
+                </nav>
+
+                <!-- Actions -->
+                <div class="header-actions">
+
+                    <!-- Language dropdown (optional if you don't need it, remove this block) -->
+                    <div class="language-selector">
+                        <button class="lang-dropdown-trigger" id="langTrigger">
+                            <img src="img/flags/mm.png" class="flag-icon">
+                            <span class="lang-text">Myanmar</span>
+                            <span class="chevron-arrow">⯆</span>
+                        </button>
+
+                        <div class="lang-dropdown-menu" id="langMenu">
+                                <a href="index.html" class="lang-item">
+                                    <img src="img/flags/gb.png" alt="UK" class="flag-icon"> English
+                                </a>
+                                <a href="index_jp.html" class="lang-item">
+                                    <img src="img/flags/jp.png" alt="Japan" class="flag-icon"> Japanese
+                                </a>
+                                <a href="index_mm.html" class="lang-item">
+                                    <img src="img/flags/mm.png" alt="Myanmar" class="flag-icon"> Myanmar
+                                </a>
+                            </div>
+                    </div>
+
+                    <!-- Hamburger -->
+                    <button class="hamburger-toggle" id="menuToggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+        </header>
+
+    <div class="header">
+        <h1>သတင်းနှင့် ကြေညာချက်များ</h1>
+        <p>နောက်ဆုံးရ သတင်းများနှင့် အသိပေးချက်များ</p>
+    </div>
+
+    <div class="container">
+
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="သတင်းများ ရှာဖွေရန်...">
+        </div>
+        <div id="featured"></div>
+
+        <div id="news-list" class="news-grid">
+            <div class="loading">သတင်းများကို ဖွင့်လှစ်နေပါသည်...</div>
+        </div>
+
+        <div id="pagination" class="pagination"></div>
+
+    </div>
+
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <div id="modalTitle" class="modal-title"></div>
+            <div id="modalDate" class="modal-date"></div>
+            <div id="modalContent" class="modal-text"></div>
+        </div>
+    </div>
+
+    <footer class="footer">
+    © 2026 News Portal. All Rights Reserved.
+    </footer>
+
+    <script>
+
+        const API_URL="https://script.google.com/macros/s/AKfycbxxs5lGpTtx9TZAbcd23Xs6_LZnvMEAYWSGeJVuaabRZ4emy9jY9Tr0oWsfSi5eETowKA/exec";
+
+        const LIMIT=10;
+
+        let allNews=[];
+
+        function loadNews(page=1){
+
+            document.getElementById("news-list").innerHTML= '<div class="loading">Loading...</div>';
+
+            fetch(`${API_URL}?page=${page}&limit=${LIMIT}`).then(r=>r.json()).then(data=>{
+
+                allNews=data.news;
+
+                renderFeatured(data.news[0]);
+
+                renderNews(data.news);
+
+                renderPagination(
+                data.currentPage,
+                data.totalPages
+                );
+
+            });
+        }
+
+        function renderFeatured(item){
+
+            if(!item) return;
+
+            const date= new Date(item.date).toLocaleDateString('en-GB');
+
+            document.getElementById('featured').innerHTML=`
+
+                <div class="featured" onclick="showNews(0)">
+
+                <div class="featured-image"></div>
+
+                <div class="featured-content">
+
+                <div class="featured-date">
+                    ${date}
+                </div>
+
+                <h2 class="featured-title">
+                    ${item.title_mm}
+                </h2>
+
+                <p>
+                ${item.content_mm.substring(0,250)}...
+                </p>
+
+                </div>
+
+                </div>
+                `;
+             }
+
+        function renderNews(news){
+
+        let html='';
+
+        news.forEach((item,index)=>{
+
+        const date= new Date(item.date).toLocaleDateString('en-GB');
+
+        const shortContent = item.content_mm.length > 150 ? item.content_mm.substring(0,150) + '...' : item.content_mm;
+        html+=`
+
+            <div class="news-card">
+
+                <div class="card-image"></div>
+
+                <div class="card-body">
+
+                    <div class="news-date">
+                        ${date}
+                    </div>
+
+                    <div class="news-title">
+                        ${item.title_mm}
+                    </div>
+
+                    <div class="news-content">
+                        ${shortContent}
+                    </div>
+
+                    <button class="read-btn" onclick="showNews(${index})">
+                        ဆက်လက် ဖတ်ရှုရန်
+                    </button>
+                </div>
+            </div>
+            `;
+        });
+
+        document.getElementById('news-list').innerHTML= html;
+        }
+
+        function showNews(index){
+
+            const item=allNews[index];
+
+            document.getElementById('modalTitle').innerText=item.title_mm;
+
+            document.getElementById('modalDate').innerText=new Date(item.date).toLocaleDateString('en-GB');
+
+            document.getElementById('modalContent').innerText=item.content_mm;
+            document.getElementById('newsModal').style.display='block';
+        }
+
+        function closeModal(){
+
+            document.getElementById('newsModal').style.display='none';
+        }
+
+        window.onclick=function(event){
+
+        const modal=
+        document.getElementById('newsModal');
+
+        if(event.target===modal){
+
+        modal.style.display='none';
+        }
+        }
+
+        function renderPagination(current,total){
+
+        let html='';
+
+        for(let i=1;i<=total;i++){
+
+        html+=`
+        <button
+        class="${i===current?'active':''}"
+        onclick="loadNews(${i})">
+        ${i}
+        </button>
+        `;
+        }
+
+        document.getElementById('pagination')
+        .innerHTML=html;
+        }
+
+        document
+        .getElementById('searchInput')
+        .addEventListener('keyup',function(){
+
+        const keyword=
+        this.value.toLowerCase();
+
+        const filtered= allNews.filter(item=>
+
+        item.title_mm
+        .toLowerCase()
+        .includes(keyword)
+
+        ||
+
+        item.content_mm
+        .toLowerCase()
+        .includes(keyword)
+
+        );
+
+        renderNews(filtered);
+        });
+
+        loadNews(1);
+
+        </script>
+    <script src="js/global.js"></script>
+    <script src="js/index.js"></script>
+    </body>
+</html>

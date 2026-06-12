@@ -8,7 +8,19 @@
         <title>News Portal</title>
 
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/index.css">
 
+        <!-- Google Fonts: Plus Jakarta Sans & Noto Sans JP/Myanmar for fallback -->
+        <link rel="preconnect" href="https://googleapis.com">
+        <link rel="preconnect" href="https://gstatic.com" crossorigin>
+        <link href="https://googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Sans+Myanmar:wght@300;400;700&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+        <!-- Your existing CSS Links (keep these below the font links) -->
+        <link rel="stylesheet" href="css/global.css">
+        <link rel="stylesheet" href="css/index.css">
+
+        <link rel="stylesheet" href="https://cloudflare.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
         <style>
 
         *{
@@ -330,13 +342,17 @@
         }
 
         }
+        .modal {
+        position: fixed;
+        z-index: 99999; 
+    }
 
         </style>
 
     </head>
 
     <body>
-        <nav class="navbar">
+        <!-- <nav class="navbar">
 
         <div class="nav-container">
 
@@ -354,7 +370,75 @@
 
         </div>
 
-    </nav>
+    </nav> -->
+
+    <header class="site-header">
+        <div class="header-container">
+        
+        <!-- Logo -->
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo"/>
+            <span><strong>News Portal</strong></span>
+        </div>
+
+        <div class="header-navigation-column">
+
+            <!-- Top utility bar -->
+            <div class="top-utility-bar">
+                <div class="utility-links">
+                        <a href="#contact" class="utility-item">Request for information</a>
+                        <a href="#access" class="utility-item access-btn">Access</a>
+                </div>
+            </div>
+
+            <!-- Main navigation -->
+            <div class="main-navigation-row">
+                <nav class="main-nav">
+                    <div class="nav-menu">
+                            <a href="index.html" class="active">Home</a>
+                            <a href="news.html">News</a>
+                            <a href="#">Course</a>
+                            <a href="#">Message For You</a>
+                    </div>
+                </nav>
+
+                <!-- Actions -->
+                <div class="header-actions">
+
+                    <!-- Language dropdown (optional if you don't need it, remove this block) -->
+                    <div class="language-selector">
+                        <button class="lang-dropdown-trigger" id="langTrigger">
+                            <img src="img/flags/mm.png" class="flag-icon">
+                            <span class="lang-text">Myanmar</span>
+                            <span class="chevron-arrow">⯆</span>
+                        </button>
+
+                        <div class="lang-dropdown-menu" id="langMenu">
+                                <a href="index.html" class="lang-item">
+                                    <img src="img/flags/gb.png" alt="UK" class="flag-icon"> English
+                                </a>
+                                <a href="index_jp.html" class="lang-item">
+                                    <img src="img/flags/jp.png" alt="Japan" class="flag-icon"> Japanese
+                                </a>
+                                <a href="index_mm.html" class="lang-item">
+                                    <img src="img/flags/mm.png" alt="Myanmar" class="flag-icon"> Myanmar
+                                </a>
+                            </div>
+                    </div>
+
+                    <!-- Hamburger -->
+                    <button class="hamburger-toggle" id="menuToggle">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </header>
 
     <div class="header">
         <h1>News & Announcements</h1>
@@ -566,6 +650,7 @@
         loadNews(1);
 
         </script>
-
+    <script src="js/global.js"></script>
+    <script src="js/index.js"></script>
     </body>
 </html>
