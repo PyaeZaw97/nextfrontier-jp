@@ -1,13 +1,14 @@
 /* ==========================================================================
-   🏆 GLOBAL INITIALIZATION & VARIABLES
+   🎯 NEXT FRONTIER ACCURATE BRAND CONSTANTS
    ========================================================================== */
 :root {
-    --brand-navy: #1e3a8a;
-    --brand-blue: #2563eb;
-    --text-slate: #0f172a;
-    --text-muted: #475569;
-    --bg-light: #f8fafc;
-    --sakura-pink: rgba(244, 63, 94, 0.18);
+    --nft-red: #d31127;          /* Primary vibrant branding crimson red */
+    --nft-blue: #427893;         /* Core slate blue helper tint #1b506b*/
+    --text-dark: #0f172a;        /* Deep headings color profile */
+    /* --text-slate: #334155;        */
+    --text-slate: #1b506b;       /* Descriptive reading body text slate 1b506b*/
+    --bg-light: #fdfefe;         /* Soft neutral page backdrop tracking */
+    --card-border: #f1f5f9;      /* Clean off-white container divider boundaries */
 }
 
 * {
@@ -17,26 +18,28 @@
 }
 
 body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; */
+    /* font-family: 'Plus Jakarta Sans', 'Noto Sans JP', 'Noto Sans Myanmar', sans-serif; */
     background-color: var(--bg-light);
     color: var(--text-slate);
-    line-height: 1.6;
+    line-height: 1.65;
     overflow-x: hidden;
 }
 
 /* ==========================================================================
-   🌌 ADVANCED BACKGROUND ENGINE (Tech Grid & Glowing Orbs)
+   🌌 ADVANCED BACKGROUND MATRIX (Matching Your Site's Clean Feel)
    ========================================================================== */
 .message-page-wrapper {
     position: relative;
     width: 100%;
     min-height: 100vh;
-    padding: 100px 24px;
+    padding: 60px 24px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* Crisp Graph Pattern Matrix Overlay */
 .bg-matrix-layer {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
@@ -48,143 +51,592 @@ body {
     position: absolute;
     top: 0; left: 0; width: 100%; height: 100%;
     background-image: 
-        linear-gradient(rgba(15, 23, 42, 0.02) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(15, 23, 42, 0.02) 1px, transparent 1px);
-    background-size: 40px 40px;
-    mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
-    -webkit-mask-image: radial-gradient(circle at center, black 70%, transparent 100%);
+        linear-gradient(rgba(66, 120, 147, 0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(66, 120, 147, 0.02) 1px, transparent 1px);
+    background-size: 50px 50px;
 }
 
+/* Soft Ambient Lighting Orbs utilizing your custom hex palette */
 .glow-orb {
-    position: absolute; width: 500px; height: 500px;
-    border-radius: 50%; filter: blur(130px); opacity: 0.4;
+    position: absolute; width: 600px; height: 600px;
+    border-radius: 50%; filter: blur(140px); opacity: 0.18;
 }
-.orb-1 { top: -10%; right: -5%; background: radial-gradient(circle, var(--brand-blue), transparent); }
-.orb-2 { bottom: -10%; left: -5%; background: radial-gradient(circle, #f43f5e, transparent); opacity: 0.2; }
+.orb-1 { top: -10%; right: -5%; background: radial-gradient(circle, var(--nft-blue), transparent); }
+.orb-2 { bottom: -10%; left: -5%; background: radial-gradient(circle, var(--nft-red), transparent); opacity: 0.08; }
 
 /* ==========================================================================
-   🌸 REALISTIC SAKURA BLOSSOMS MOTION MATRIX
+   🌸 FLOATING REALISTIC SAKURA BLOSSOMS SYSTEM
    ========================================================================== */
 .sakura-flower {
     position: absolute; pointer-events: none; user-select: none;
-    opacity: 0.25; will-change: transform; width: 36px; height: 36px;
+    opacity: 0.22; will-change: transform; width: 38px; height: 38px;
 }
 .sakura-flower img { width: 100%; height: 100%; object-fit: contain; }
 
-.s-1 { top: 12%; left: 6%; animation: sakuraTumble 18s linear infinite; }
-.s-2 { top: 25%; right: 12%; animation: sakuraTumble 24s linear infinite -5s; width: 24px; height: 24px; }
-.s-3 { bottom: 15%; left: 15%; animation: sakuraTumble 20s linear infinite -10s; width: 30px; height: 30px; }
-.s-4 { bottom: 20%; right: 6%; animation: sakuraTumble 26s linear infinite -3s; width: 42px; height: 42px; }
+.s-1 { top: 14%; left: 5%; animation: sakuraRealTumble 22s linear infinite; }
+.s-2 { top: 28%; right: 8%; animation: sakuraRealTumble 26s linear infinite -4s; width: 24px; height: 24px; }
+.s-3 { bottom: 18%; left: 12%; animation: sakuraRealTumble 19s linear infinite -8s; width: 32px; height: 32px; }
+.s-4 { bottom: 15%; right: 5%; animation: sakuraRealTumble 30s linear infinite -2s; width: 44px; height: 44px; }
 
-@keyframes sakuraTumble {
+@keyframes sakuraRealTumble {
     0% { transform: translateY(0) translateX(0) rotate(0deg) rotateY(0deg); }
-    50% { transform: translateY(-20px) translateX(20px) rotate(180deg) rotateY(180deg); }
+    50% { transform: translateY(-25px) translateX(20px) rotate(180deg) rotateY(180deg); }
     100% { transform: translateY(0) translateX(0) rotate(360deg) rotateY(0deg); }
 }
 
 /* ==========================================================================
-   🍱 PREMIUM LAYOUT CONTAINER
+   🍱 PREMIUM GRID INTERLOCKING ENGINE
    ========================================================================== */
 .message-container {
-    position: relative; z-index: 2;
-    width: 100%; max-width: 1100px;
+    position: relative; 
+    z-index: 2;
+    width: 100%; 
+    max-width: 1150px;
     display: grid;
-    grid-template-columns: 0.85fr 1.15fr;
-    gap: 60px;
-    align-items: start;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 50px;
+    align-items: start; /* 👈 CRUCIAL: Keeps cards bound strictly to their contents instead of pulling down awkwardly */
 }
 
 /* ==========================================================================
-   🌐 LANGUAGE SELECTION HUD
+   🌐 NEXT FRONTIER NAVIGATION HUD BUTTONS
    ========================================================================== */
 .lang-switcher-hud {
-    position: absolute; top: -60px; right: 0;
-    display: flex; gap: 8px; background: rgba(255, 255, 255, 0.7);
-    padding: 6px; border-radius: 100px; backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    position: absolute; top: -65px; right: 0;
+    display: flex; gap: 8px; background: rgba(255, 255, 255, 0.85);
+    padding: 6px; border-radius: 12px; backdrop-filter: blur(12px);
+    border: 1px solid rgba(66, 120, 147, 0.1);
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.02);
 }
 .lang-btn {
-    all: unset; cursor: pointer; padding: 8px 18px; border-radius: 100px;
-    font-size: 0.85rem; font-weight: 600; color: var(--text-muted);
-    text-decoration: none; transition: all 0.3s ease;
+    all: unset; cursor: pointer; padding: 8px 20px; border-radius: 8px;
+    font-size: 0.85rem; font-weight: 600; color: var(--text-slate);
+    text-decoration: none; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.lang-btn:hover { color: var(--text-slate); background: rgba(0,0,0,0.03); }
+.lang-btn:hover { color: var(--nft-blue); background: rgba(66, 120, 147, 0.05); }
 .lang-btn.active {
-    background: var(--brand-navy); color: #ffffff;
-    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.2);
+    background: var(--nft-red); color: #ffffff;
+    box-shadow: 0 6px 16px rgba(211, 17, 39, 0.2);
 }
 
 /* ==========================================================================
-   🖼️ LEFT COLUMN: PROFILE CARD
+   🖼️ LEFT SIDEBAR: PROFILE CONTAINER
    ========================================================================== */
+/* ==========================================================================
+   🍱 ASYMMETRIC LEFT COLUMN STACK RE-ENGINEERING
+   ========================================================================== */
+/* Wraps both cards into a clean vertical flex track */
+.left-column-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px; /* Perfectly uniform spatial separation */
+    position: sticky;
+    top: 120px; /* Sticks smoothly to viewport ceiling as user reads right essay */
+}
+
+/* Base modifications to ensure structural harmony */
+.profile-card-sticky {
+    margin-bottom: 0 !important; /* Managed cleanly by stack layout gap */
+}
+
+/* ==========================================================================
+   ✨ PREMIUM NOTIFICATION FEED CARD STYLING
+   ========================================================================== */
+.nft-notice-badge-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 15px 35px rgba(66, 120, 147, 0.04);
+    border-left: 1px solid var(--card-border);
+    border-right: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Brand matching top borders */
+.nft-notice-badge-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 45px rgba(66, 120, 147, 0.08);
+}
+
+.badge-accent-line {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 4px;
+    background-color: var(--nft-blue); /* Secondary branding slate blue */
+}
+
+/* Header Live Status elements */
+.badge-header-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.badge-header-row h4 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-dark);
+}
+
+.badge-live-pulse {
+    width: 8px;
+    height: 8px;
+    background-color: var(--nft-red); /* Active red indicator */
+    border-radius: 50%;
+    position: relative;
+}
+
+.badge-live-pulse::after {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--nft-red); border-radius: 50%;
+    animation: badgePulse 2s infinite ease-in-out;
+}
+
+@keyframes badgePulse {
+    0% { transform: scale(1); opacity: 0.8; }
+    100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* Internal Dense News Feed Content List */
+.badge-news-list {
+    list-style: none;
+    padding: 0; margin: 0 0 20px 0;
+    display: flex; flex-direction: column; gap: 16px;
+}
+
+.badge-news-list li {
+    display: flex; flex-direction: column; gap: 6px;
+    padding-bottom: 14px;
+    border-bottom: 1px dashed #f1f5f9;
+}
+.badge-news-list li:last-child {
+    border-bottom: none; padding-bottom: 0;
+}
+
+.news-date-tag {
+    align-self: flex-start;
+    font-size: 0.7rem; font-weight: 700;
+    padding: 3px 8px; border-radius: 4px;
+    text-transform: uppercase; letter-spacing: 0.02em;
+}
+.tag-red { background: rgba(211, 17, 39, 0.06); color: var(--nft-red); }
+.tag-blue { background: rgba(66, 120, 147, 0.06); color: var(--nft-blue); }
+
+.badge-news-list p {
+    font-size: 0.85rem;
+    color: var(--text-slate);
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Bottom Action Links text nudge styling */
+.badge-quick-link {
+    font-size: 0.825rem; font-weight: 700;
+    color: var(--nft-red); text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+    transition: color 0.3s ease;
+}
+
+.badge-quick-link i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.badge-quick-link:hover {
+    color: var(--nft-blue);
+}
+.badge-quick-link:hover i {
+    transform: translateX(4px);
+}
+
+/* Layout Adaptation for Smaller Viewports */
+@media (max-width: 992px) {
+    .left-column-stack {
+        position: static; /* Drops stickiness rule so components stack linearly on mobile devices */
+    }
+}
+
 .profile-card-sticky {
     position: relative;
     background: #ffffff;
-    border: 2px solid var(--brand-blue);
-    border-radius: 28px;
-    padding: 32px;
+    border-top: 4px solid var(--nft-red); /* Clean accent top border matching layout screenshot */
+    border-radius: 20px;
+    padding: 36px 28px;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.04);
+    box-shadow: 0 15px 35px rgba(66, 120, 147, 0.05);
+    border-left: 1px solid var(--card-border);
+    border-right: 1px solid var(--card-border);
+    border-bottom: 1px solid var(--card-border);
 }
+
 .profile-image-frame {
-    width: 180px; height: 180px; margin: 0 auto 24px;
+    width: 170px; height: 170px; margin: 0 auto 24px;
     border-radius: 50%; overflow: hidden;
-    border: 4px solid var(--bg-light);
-    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+    border: 4px solid #ffffff;
+    box-shadow: 0 8px 25px rgba(66, 120, 147, 0.15);
 }
 .profile-image-frame img { width: 100%; height: 100%; object-fit: cover; }
 
-.director-name { font-size: 1.4rem; font-weight: 800; color: var(--text-slate); margin-bottom: 4px; }
-.director-title { font-size: 0.9rem; font-weight: 600; color: var(--brand-blue); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px; }
+.director-name { font-size: 1.45rem; font-weight: 700; color: var(--text-dark); margin-bottom: 6px; }
+.director-title { font-size: 0.85rem; font-weight: 700; color: var(--nft-blue); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 24px; }
 
 .signature-box {
-    border-top: 1px solid #e2e8f0; padding-top: 20px;
+    border-top: 1px solid #f1f5f9; padding-top: 24px;
     display: flex; flex-direction: column; align-items: center; gap: 8px;
 }
-.signature-img { height: 45px; object-fit: contain; filter: multiply(1); }
+.signature-img { height: 42px; object-fit: contain; }
 
 /* ==========================================================================
-   ✉️ RIGHT COLUMN: ESSAY CONTENT BLOCK
+   ✉️ RIGHT SIDEBAR: PROFESSIONAL TEXT CANVAS
    ========================================================================== */
 .essay-content-card {
-    background: rgba(255, 255, 255, 0.65);
+    background: rgba(255, 255, 255, 0.8);
     backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.7);
-    border-radius: 28px; padding: 48px;
-    box-shadow: 0 20px 50px rgba(15, 23, 42, 0.03);
+    border-radius: 24px; padding: 48px;
+    box-shadow: 0 20px 45px rgba(15, 23, 42, 0.02);
 }
+
 .tagline-accent {
-    display: inline-block; font-size: 0.85rem; font-weight: 700;
-    color: var(--brand-blue); text-transform: uppercase; letter-spacing: 0.1em;
-    margin-bottom: 12px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.85rem; font-weight: 700;
+    color: var(--nft-red); text-transform: uppercase; letter-spacing: 0.08em;
+    margin-bottom: 16px;
 }
+
+/* Colored block indicator mimicking the red dash line under headings in your website header image */
+.tagline-accent::before {
+    content: ''; display: block; width: 16px; height: 3px; background-color: var(--nft-blue);
+}
+
 .essay-main-heading {
-    font-size: 2.2rem; font-weight: 800; color: var(--text-slate);
-    line-height: 1.3; margin-bottom: 32px; letter-spacing: -0.02em;
+    font-size: 2.15rem; font-weight: 800; color: var(--text-slate);
+    line-height: 1.3; margin-bottom: 28px; letter-spacing: -0.01em;
 }
+
+/* Custom highlight block colored with your secondary slate blue variable */
+.essay-quote-block {
+    border-left: 4px solid var(--nft-blue); background: rgba(66, 120, 147, 0.03);
+    padding: 20px 24px; margin-bottom: 28px; border-radius: 0 12px 12px 0;
+}
+.essay-quote-block p {
+    font-size: 1.05rem; font-weight: 600; color: #2a5369;
+    font-style: italic; margin-bottom: 0; line-height: 1.6;
+}
+
 .essay-body p {
-    font-size: 1.05rem; color: var(--text-muted); margin-bottom: 24px;
+    font-size: 1.05rem; color: var(--text-slate); margin-bottom: 24px;
     line-height: 1.75; text-align: justify;
 }
 .essay-body p:last-child { margin-bottom: 0; }
 
-/* Highlighted Callout Text block */
-.essay-quote-block {
-    border-left: 4px solid var(--brand-blue); background: rgba(37, 99, 235, 0.03);
-    padding: 20px 24px; margin-bottom: 28px; border-radius: 0 16px 16px 0;
-}
-.essay-quote-block p {
-    font-size: 1.1rem; font-weight: 600; color: var(--brand-navy);
-    font-style: italic; margin-bottom: 0; line-height: 1.6;
-}
-
 /* ==========================================================================
-   📱 ADAPTIVE MOBILE LAYOUT
+   📱 ADAPTIVE FLUID VIEWPORT RESPONSIVENESS
    ========================================================================== */
 @media (max-width: 992px) {
-    .message-page-wrapper { padding-top: 140px; }
+    .message-page-wrapper { padding-top: 150px; }
     .message-container { grid-template-columns: 1fr; gap: 40px; }
     .lang-switcher-hud { top: -75px; }
     .essay-content-card { padding: 32px; }
-    .essay-main-heading { font-size: 1.8rem; }
+    .essay-main-heading { font-size: 1.75rem; }
+    .sakura-flower { display: none !important; } /* Safeguards responsive fluid performance */
+}
+
+/* ==========================================================================
+   🚀 NEXT FRONTIER SUPPORT & MOTIVATIONAL STYLES
+   ========================================================================== */
+.nft-motivation-section {
+    width: 100%;
+    padding: 80px 24px;
+    background-color: #fdfefe;
+}
+
+.nft-section-header {
+    text-align: center;
+    margin-bottom: 48px;
+    position: relative;
+}
+
+.nft-tagline {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #bc002d; /* Slate Blue */
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 8px;
+}
+
+.nft-main-heading {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-slate);
+    line-height: 1.4;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+/* ဂျပန် website ကဲ့သို့ ခေါင်းစဉ်အောက်တွင် အနီရောင်မျဉ်းတိုလေး ထည့်သွင်းခြင်း */
+.nft-main-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 45px;
+    height: 3px;
+    background-color: #d31127; /* Brand Crimson Red */
+}
+
+/* 2-Column Split: ဂျပန်မရောက်ခင် နှင့် ရောက်ပြီးနောက်ပိုင်း */
+.nft-support-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 32px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+.nft-support-card {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 36px;
+    box-shadow: 0 10px 30px rgba(66, 120, 147, 0.05);
+    border: 1px solid #f1f5f9;
+    transition: transform 0.3s ease;
+}
+
+.nft-support-card:hover {
+    transform: translateY(-4px);
+}
+
+/* Card ခေါင်းစဉ်ပိုင်းတွင် သတ်မှတ်အရောင်များခွဲခြားခြင်း */
+.pre-departure { border-top: 4px solid #427893; } /* Slate Blue */
+.after-service { border-top: 4px solid #d31127; }  /* Crimson Red */
+
+.card-icon-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+}
+
+.card-icon-header i {
+    font-size: 1.8rem;
+}
+.pre-departure .card-icon-header i { color: #427893; }
+.after-service .card-icon-header i { color: #d31127; }
+
+.card-icon-header h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+/* List စာသားများ ပြုပြင်ခြင်း */
+.support-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.support-list li {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+/* စာရင်းနံပါတ် ဝိုင်းဝိုင်းလေးများ */
+.list-counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-top: 2px;
+}
+.pre-departure .list-counter { background-color: #427893; }
+.after-service .list-counter { background-color: #d31127; }
+
+.support-list p {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ==========================================================================
+   ⭐ NEXT FRONTIER PREMIUM SLIDING REVIEWS ENGINE
+   ========================================================================== */
+.nft-carousel-section {
+    width: 100%;
+    padding: 80px 0;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+.carousel-title-container {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 0 24px;
+}
+
+/* Outer Viewport Isolation with Smooth Blurred Edges Vignette */
+.nft-carousel-viewport {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 20px 0;
+    /* Softly blends the cards out at the left and right screen bounds */
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* Flex Track Layout containing original + cloned elements width */
+.nft-carousel-track {
+    display: flex;
+    gap: 24px;
+    width: max-content;
+}
+
+/* Loop Animation Trigger */
+.glide-left {
+    animation: infiniteScrollLeft 28s linear infinite;
+}
+
+/* Pauses movement smoothly when any individual card is under mouse focus */
+.nft-carousel-viewport:hover .nft-carousel-track {
+    animation-play-state: paused;
+}
+
+@keyframes infiniteScrollLeft {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* Translates exactly half the width of the paired track loop layout */
+        transform: translateX(calc(-50% - 12px)); 
+    }
+}
+
+/* ==========================================================================
+   🍱 ELEVATED REVIEW CARD METRICS
+   ========================================================================== */
+.review-premium-card {
+    background: #ffffff;
+    width: 380px; /* Rigid, elegant card structure width */
+    min-height: 230px;
+    border-radius: 20px;
+    padding: 32px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 20px rgba(66, 120, 147, 0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                border-color 0.4s ease;
+}
+
+/* Individual Brand Variable Highlights */
+.card-accent-blue { border-bottom: 4px solid #427893; }
+.card-accent-red { border-bottom: 4px solid #d31127; }
+
+/* Interactive Hover States */
+.review-premium-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(66, 120, 147, 0.08);
+}
+.card-accent-blue:hover { border-color: #427893; }
+.card-accent-red:hover { border-color: #d31127; }
+
+/* Internal Card Text Components */
+.review-top-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.review-stars {
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+}
+
+.review-date {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.review-text {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.65;
+    font-style: italic;
+    margin-bottom: 24px;
+}
+
+/* Bottom Profile Alignment Track */
+.review-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 20px;
+}
+
+.user-avatar-text {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.avatar-blue { background-color: rgba(66, 120, 147, 0.1); color: #427893; }
+.avatar-red { background-color: rgba(211, 17, 39, 0.08); color: #d31127; }
+
+.user-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0 0 2px 0;
+}
+
+.user-status {
+    font-size: 0.78rem;
+    color: #64748b;
+    margin: 0;
+}
+
+/* ==========================================================================
+   📱 MOBILE & LOW POWER DEVICE OPTIMIZATIONS
+   ========================================================================== */
+@media (max-width: 640px) {
+    .review-premium-card {
+        width: 310px; /* Narrower width footprint for fluid rendering on phone displays */
+        padding: 24px;
+    }
+    .glide-left {
+        animation-duration: 22s; /* Speeds up tracking pacing loops slightly on small panels */
+    }
 }
