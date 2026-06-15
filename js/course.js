@@ -32,13 +32,39 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// document.addEventListener("DOMContentLoaded", () => {
+//     const filterButtons = document.querySelectorAll(".filter-pill");
+//     const catalogCards = document.querySelectorAll(".catalog-card");
+
+//     filterButtons.forEach(button => {
+//         button.addEventListener("click", () => {
+//             // Remove active style from previous selection and apply to current
+//             document.querySelector(".filter-pill.active")?.classList.remove("active");
+//             button.classList.add("active");
+
+//             const selectedCategory = button.getAttribute("data-target");
+
+//             catalogCards.forEach(card => {
+//                 const cardCategory = card.getAttribute("data-category");
+
+//                 // Evaluate display logical constraints
+//                 if (selectedCategory === "all" || cardCategory === selectedCategory) {
+//                     card.classList.remove("is-hidden");
+//                 } else {
+//                     card.classList.add("is-hidden");
+//                 }
+//             });
+//         });
+//     });
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
     const filterButtons = document.querySelectorAll(".filter-pill");
     const catalogCards = document.querySelectorAll(".catalog-card");
 
     filterButtons.forEach(button => {
         button.addEventListener("click", () => {
-            // Remove active style from previous selection and apply to current
+            // Cycle through active pill highlights
             document.querySelector(".filter-pill.active")?.classList.remove("active");
             button.classList.add("active");
 
@@ -47,7 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
             catalogCards.forEach(card => {
                 const cardCategory = card.getAttribute("data-category");
 
-                // Evaluate display logical constraints
                 if (selectedCategory === "all" || cardCategory === selectedCategory) {
                     card.classList.remove("is-hidden");
                 } else {
@@ -57,5 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
+
 
 

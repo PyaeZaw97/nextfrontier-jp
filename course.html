@@ -47,7 +47,7 @@
                     <nav class="main-nav">
                         <div class="nav-menu">
                             <a href="index.html">Home</a>
-                            <a href="news.html">News</a>
+                            <a href="#">News</a>
                             <a href="course.html" class="active">Course</a>
                             <a href="#">Message For You</a>
                         </div>
@@ -358,131 +358,143 @@
     <!-- Modern Interactive Course Card Grid Section -->
     <main class="course-catalog-section">
         <div class="catalog-container">
-            <!-- ✨ Premium Fluid Category Navigation Menu -->
+            
+            <!-- ✨ Premium Floating Category Navigation HUD -->
             <nav class="catalog-filter-bar">
-                <button class="filter-pill active" data-target="all">All Programs</button>
-                <button class="filter-pill" data-target="beginner">Beginner Track</button>
-                <button class="filter-pill" data-target="intermediate">Intermediate Track</button>
-                <button class="filter-pill" data-target="professional">Professional Track</button>
+                <button class="filter-pill active" data-target="all">All Courses</button>
+                <button class="filter-pill" data-target="foundation">Foundation (N5-N4)</button>
+                <button class="filter-pill" data-target="intermediate">Intermediate (N3-N2)</button>
+                <button class="filter-pill" data-target="advanced">Advanced & Speaking (N1)</button>
             </nav>
+            
+            <!-- 4-Column Coursera Style Dense Matrix -->
             <div class="catalog-grid" id="catalogGrid">
                 
-                <!-- Program Card 1 -->
-                <article class="catalog-card" data-category="beginner">
+                <!-- Course 1: N5 -->
+                <article class="catalog-card" data-category="foundation">
                     <div class="card-media-frame">
-                        <img src="img/course-beginner.jpg" alt="N5 Foundation Program">
-                        <span class="card-level-badge">Beginner Level</span>
+                        <img src="img/course-beginner.jpg" alt="JLPT N5 Course">
                     </div>
                     <div class="card-body-content">
-                        <div class="card-meta-row">
-                            <span class="meta-pill"><i class="fa-regular fa-clock"></i> 3 Months</span>
-                            <span class="meta-pill"><i class="fa-regular fa-user"></i> Max 15 Seats</span>
+                        <div class="card-delivery-modes">
+                            <span class="mode-tag"><i class="fa-solid fa-laptop"></i> Online</span>
+                            <span class="mode-tag"><i class="fa-solid fa-school"></i> In-Class</span>
                         </div>
                         <h2 class="card-main-title">JLPT N5 Foundation Course</h2>
-                        <p class="card-text-description">Master Hiragana, Katakana, and basic sentence blueprints. Perfect for absolute beginners looking to build conversational frameworks.</p>
+                        <ul class="card-feature-list">
+                            <li>Beginner level introductory metrics</li>
+                            <li>Hiragana & Katakana mastery</li>
+                            <li>Essential vocabulary blueprints</li>
+                        </ul>
                         <div class="card-pricing-footer">
-                            <!-- <div class="price-box">
-                                <span class="currency-label">$</span>
-                                <span class="price-amount">180</span>
-                                <span class="price-period">/ course</span>
-                            </div> -->
-                            <a href="#" class="enroll-action-btn" >Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+                            <span class="enroll-action-btn">Specialization</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Program Card 2 -->
-                <article class="catalog-card" data-category="beginner">
+                <!-- Course 2: N4 -->
+                <article class="catalog-card" data-category="foundation">
                     <div class="card-media-frame">
-                        <img src="img/course-beginner.jpg" alt="N4 Practical Program">
-                        <span class="card-level-badge">Elementary Level</span>
+                        <img src="img/course-n4.jpg" alt="JLPT N4 Course">
                     </div>
                     <div class="card-body-content">
-                        <div class="card-meta-row">
-                            <span class="meta-pill"><i class="fa-regular fa-clock"></i> 3.5 Months</span>
-                            <span class="meta-pill"><i class="fa-regular fa-user"></i> Max 15 Seats</span>
+                        <div class="card-delivery-modes">
+                            <span class="mode-tag"><i class="fa-solid fa-laptop"></i> Online</span>
+                            <span class="mode-tag"><i class="fa-solid fa-school"></i> In-Class</span>
                         </div>
                         <h2 class="card-main-title">JLPT N4 Elementary Mastery</h2>
-                        <p class="card-text-description">Advance your vocabulary syntax to encompass complex daily routines, read basic publications, and satisfy initial working metrics.</p>
+                        <ul class="card-feature-list">
+                            <li>Basic communication protocols</li>
+                            <li>Grammar foundation syntax</li>
+                            <li>Practical Kanji character learning</li>
+                        </ul>
                         <div class="card-pricing-footer">
-                            <div class="price-box">
-                                <span class="currency-label">$</span>
-                                <span class="price-amount">210</span>
-                                <span class="price-period">/ course</span>
-                            </div>
-                            <a href="#" class="enroll-action-btn" >Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+                            <span class="enroll-action-btn">Specialization</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Program Card 3 -->
+                <!-- Course 3: N3 -->
                 <article class="catalog-card" data-category="intermediate">
                     <div class="card-media-frame">
-                        <img src="img/course-intermediate.jpg" alt="N3 Intermediate Program">
-                        <span class="card-level-badge">Intermediate Level</span>
+                        <img src="img/course-n3.jpg" alt="JLPT N3 Course">
                     </div>
                     <div class="card-body-content">
-                        <div class="card-meta-row">
-                            <span class="meta-pill"><i class="fa-regular fa-clock"></i> 4 Months</span>
-                            <span class="meta-pill"><i class="fa-regular fa-user"></i> Max 12 Seats</span>
+                        <div class="card-delivery-modes">
+                            <span class="mode-tag"><i class="fa-solid fa-laptop"></i> Online</span>
+                            <span class="mode-tag"><i class="fa-solid fa-school"></i> In-Class</span>
                         </div>
                         <h2 class="card-main-title">JLPT N3 Fluency Transition</h2>
-                        <p class="card-text-description">Bridge the gap to structural fluency. Learn mid-level kanji and speak confidently about abstract cultural and professional contexts.</p>
+                        <ul class="card-feature-list">
+                            <li>Intermediate grammar blueprints</li>
+                            <li>Intensive listening practice</li>
+                            <li>Natural conversation skills</li>
+                        </ul>
                         <div class="card-pricing-footer">
-                            <div class="price-box">
-                                <span class="currency-label">$</span>
-                                <span class="price-amount">260</span>
-                                <span class="price-period">/ course</span>
-                            </div>
-                            <a href="#" class="enroll-action-btn" >Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+                            <span class="enroll-action-btn">Specialization</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Program Card 4 -->
-                <article class="catalog-card" data-category="professional">
+                <!-- Course 4: N2 -->
+                <article class="catalog-card" data-category="intermediate">
                     <div class="card-media-frame">
-                        <img src="img/course-intermediate.jpg" alt="N2 Advanced Program">
-                        <span class="card-level-badge">Advanced Level</span>
+                        <img src="img/course-n2.jpg" alt="JLPT N2 Course">
                     </div>
                     <div class="card-body-content">
-                        <div class="card-meta-row">
-                            <span class="meta-pill"><i class="fa-regular fa-clock"></i> 5 Months</span>
-                            <span class="meta-pill"><i class="fa-regular fa-user"></i> Max 10 Seats</span>
+                        <div class="card-delivery-modes">
+                            <span class="mode-tag"><i class="fa-solid fa-cloud"></i> Online Class</span>
                         </div>
-                        <h2 class="card-main-title">JLPT N2 Professional Competency</h2>
-                        <p class="card-text-description">Understand complex industrial media. This high-end credential satisfies requirements for engineering and university paths inside Japan.</p>
+                        <h2 class="card-main-title">JLPT N2 Upper-Intermediate</h2>
+                        <ul class="card-feature-list">
+                            <li>Practical fluid communication</li>
+                            <li>Vocabulary enhancement matrix</li>
+                            <li>Targeted JLPT exam preparation</li>
+                        </ul>
                         <div class="card-pricing-footer">
-                            <div class="price-box">
-                                <span class="currency-label">$</span>
-                                <span class="price-amount">340</span>
-                                <span class="price-period">/ course</span>
-                            </div>
-                            <a href="#" class="enroll-action-btn" >Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+                            <span class="enroll-action-btn">Professional Certificate</span>
                         </div>
                     </div>
                 </article>
 
-                <!-- Program Card 5 -->
-                <article class="catalog-card" data-category="professional">
+                <!-- Course 5: N1 -->
+                <article class="catalog-card" data-category="advanced">
                     <div class="card-media-frame">
-                        <img src="img/course-intermediate.jpg" alt="Corporate Keigo Program">
-                        <span class="card-level-badge">Specialized Track</span>
+                        <img src="img/course-n1.jpg" alt="JLPT N1 Course">
                     </div>
                     <div class="card-body-content">
-                        <div class="card-meta-row">
-                            <span class="meta-pill"><i class="fa-regular fa-clock"></i> 2 Months</span>
-                            <span class="meta-pill"><i class="fa-regular fa-user"></i> Max 8 Seats</span>
+                        <div class="card-delivery-modes">
+                            <span class="mode-tag"><i class="fa-solid fa-cloud"></i> Online Class</span>
                         </div>
-                        <h2 class="card-main-title">Business Japanese & Keigo Protocol</h2>
-                        <p class="card-text-description">Master formal customer-facing honorific speech systems, direct email phrasing protocols, and professional interview methodologies.</p>
+                        <h2 class="card-main-title">JLPT N1 Advanced Proficiency</h2>
+                        <ul class="card-feature-list">
+                            <li>Advanced structural grammar</li>
+                            <li>Corporate Business Japanese</li>
+                            <li>Complex reading comprehension</li>
+                        </ul>
                         <div class="card-pricing-footer">
-                            <div class="price-box">
-                                <span class="currency-label">$</span>
-                                <span class="price-amount">290</span>
-                                <span class="price-period">/ course</span>
-                            </div>
-                            <a href="#" class="enroll-action-btn" >Enroll Now <i class="fa-solid fa-arrow-right"></i></a>
+                            <span class="enroll-action-btn">Professional Certificate</span>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Course 6: Advanced Speaking -->
+                <article class="catalog-card" data-category="advanced">
+                    <div class="card-media-frame">
+                        <img src="img/course-speaking.jpg" alt="Advanced Speaking Class">
+                    </div>
+                    <div class="card-body-content">
+                        <div class="card-delivery-modes">
+                            <span class="mode-tag specialty"><i class="fa-solid fa-comments"></i> Speaking Track</span>
+                        </div>
+                        <h2 class="card-main-title">Advanced Speaking & Culture Class</h2>
+                        <ul class="card-feature-list">
+                            <li>Real-life conversations & lifestyles</li>
+                            <li>Business interview preparation</li>
+                            <li>Discussion & presentation skills</li>
+                        </ul>
+                        <div class="card-pricing-footer">
+                            <span class="enroll-action-btn">Specialized Track</span>
                         </div>
                     </div>
                 </article>

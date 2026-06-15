@@ -47,7 +47,7 @@
                         <nav class="main-nav">
                             <div class="nav-menu">
                                 <a href="index_jp.html">ホーム</a>
-                                <a href="news_jp.html">ニュース</a>
+                                <a href="#">ニュース</a>
                                 <a href="course_jp.html" class="active">コース案内</a>
                                 <a href="#">メッセージ</a>
                             </div>
@@ -359,144 +359,174 @@
             </div>
         </section>
 
+        <!-- Modern Interactive Course Card Grid Section -->
         <main class="course-catalog-section">
             <div class="catalog-container">
-
-                <!-- ✨ Premium Fluid Category Navigation Menu -->
+                
+                <!-- ✨ Premium Floating Category Navigation HUD -->
                 <nav class="catalog-filter-bar">
-                    <button class="filter-pill active" data-target="all">すべてのプログラム</button>
-                    <button class="filter-pill" data-target="beginner">初級コース</button>
-                    <button class="filter-pill" data-target="intermediate">中級コース</button>
-                    <button class="filter-pill" data-target="professional">プロフェッショナルコース</button>
+                    <button class="filter-pill active" data-target="all">すべてのコース</button>
+                    <button class="filter-pill" data-target="foundation">基礎（N5〜N4）</button>
+                    <button class="filter-pill" data-target="intermediate">中級（N3〜N2）</button>
+                    <button class="filter-pill" data-target="advanced">上級・会話（N1）</button>
                 </nav>
-
+                
+                <!-- 4-Column Coursera Style Dense Matrix -->
                 <div class="catalog-grid" id="catalogGrid">
-
-                    <!-- Program Card 1 -->
-                    <article class="catalog-card" data-category="beginner">
+                    
+                    <!-- Course 1: N5 -->
+                    <article class="catalog-card" data-category="foundation">
                         <div class="card-media-frame">
-                            <img src="img/course-beginner.jpg" alt="N5基礎プログラム">
-                            <span class="card-level-badge">初級レベル</span>
+                            <img src="img/course-beginner.jpg" alt="JLPT N5 Course">
                         </div>
                         <div class="card-body-content">
-                            <div class="card-meta-row">
-                                <span class="meta-pill"><i class="fa-regular fa-clock"></i> 3ヶ月</span>
-                                <span class="meta-pill"><i class="fa-regular fa-user"></i> 定員15名</span>
+                            <div class="card-delivery-modes">
+                                <span class="mode-tag"><i class="fa-solid fa-laptop"></i> オンライン</span>
+                                <span class="mode-tag"><i class="fa-solid fa-school"></i> 対面授業</span>
                             </div>
+
                             <h2 class="card-main-title">JLPT N5 基礎コース</h2>
-                            <p class="card-text-description">
-                                ひらがな・カタカナ・基本文型を習得。日本語学習を始める初心者に最適なコースです。
-                            </p>
+
+                            <ul class="card-feature-list">
+                                <li>初心者向けの基礎学習</li>
+                                <li>ひらがな・カタカナの習得</li>
+                                <li>基本語彙の習得</li>
+                            </ul>
+
                             <div class="card-pricing-footer">
-                                <a href="#" class="enroll-action-btn">
-                                    受講する <i class="fa-solid fa-arrow-right"></i>
-                                </a>
+                                <span class="enroll-action-btn">専門コース</span>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Program Card 2 -->
-                    <article class="catalog-card" data-category="beginner">
+                    <!-- Course 2: N4 -->
+                    <article class="catalog-card" data-category="foundation">
                         <div class="card-media-frame">
-                            <img src="img/course-beginner.jpg" alt="N4実践プログラム">
-                            <span class="card-level-badge">初級（発展）</span>
+                            <img src="img/course-n4.jpg" alt="JLPT N4 Course">
                         </div>
                         <div class="card-body-content">
-                            <div class="card-meta-row">
-                                <span class="meta-pill"><i class="fa-regular fa-clock"></i> 3.5ヶ月</span>
-                                <span class="meta-pill"><i class="fa-regular fa-user"></i> 定員15名</span>
+                            <div class="card-delivery-modes">
+                                <span class="mode-tag"><i class="fa-solid fa-laptop"></i> オンライン</span>
+                                <span class="mode-tag"><i class="fa-solid fa-school"></i> 対面授業</span>
                             </div>
-                            <h2 class="card-main-title">JLPT N4 実践コース</h2>
-                            <p class="card-text-description">
-                                日常会話の語彙・文法を拡張し、簡単な文章読解や基礎的なコミュニケーション能力を強化します。
-                            </p>
+
+                            <h2 class="card-main-title">JLPT N4 初級マスターコース</h2>
+
+                            <ul class="card-feature-list">
+                                <li>基本的なコミュニケーション能力の習得</li>
+                                <li>文法の基礎構造</li>
+                                <li>実用的な漢字学習</li>
+                            </ul>
+
                             <div class="card-pricing-footer">
-                                <a href="#" class="enroll-action-btn">
-                                    受講する <i class="fa-solid fa-arrow-right"></i>
-                                </a>
+                                <span class="enroll-action-btn">専門コース</span>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Program Card 3 -->
+                    <!-- Course 3: N3 -->
                     <article class="catalog-card" data-category="intermediate">
                         <div class="card-media-frame">
-                            <img src="img/course-intermediate.jpg" alt="N3中級プログラム">
-                            <span class="card-level-badge">中級レベル</span>
+                            <img src="img/course-n3.jpg" alt="JLPT N3 Course">
                         </div>
                         <div class="card-body-content">
-                            <div class="card-meta-row">
-                                <span class="meta-pill"><i class="fa-regular fa-clock"></i> 4ヶ月</span>
-                                <span class="meta-pill"><i class="fa-regular fa-user"></i> 定員12名</span>
+                            <div class="card-delivery-modes">
+                                <span class="mode-tag"><i class="fa-solid fa-laptop"></i> オンライン</span>
+                                <span class="mode-tag"><i class="fa-solid fa-school"></i> 対面授業</span>
                             </div>
-                            <h2 class="card-main-title">JLPT N3 中級フルーエンシー</h2>
-                            <p class="card-text-description">
-                                中級漢字・文法を習得し、文化的・社会的な話題について自信を持って会話できるレベルへ到達します。
-                            </p>
+
+                            <h2 class="card-main-title">JLPT N3 流暢さへのステップアップ</h2>
+
+                            <ul class="card-feature-list">
+                                <li>中級文法の習得</li>
+                                <li>徹底的なリスニング練習</li>
+                                <li>自然な会話力の強化</li>
+                            </ul>
+
                             <div class="card-pricing-footer">
-                                <a href="#" class="enroll-action-btn">
-                                    受講する <i class="fa-solid fa-arrow-right"></i>
-                                </a>
+                                <span class="enroll-action-btn">専門コース</span>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Program Card 4 -->
-                    <article class="catalog-card" data-category="professional">
+                    <!-- Course 4: N2 -->
+                    <article class="catalog-card" data-category="intermediate">
                         <div class="card-media-frame">
-                            <img src="img/course-intermediate.jpg" alt="N2上級プログラム">
-                            <span class="card-level-badge">上級レベル</span>
+                            <img src="img/course-n2.jpg" alt="JLPT N2 Course">
                         </div>
                         <div class="card-body-content">
-                            <div class="card-meta-row">
-                                <span class="meta-pill"><i class="fa-regular fa-clock"></i> 5ヶ月</span>
-                                <span class="meta-pill"><i class="fa-regular fa-user"></i> 定員10名</span>
+                            <div class="card-delivery-modes">
+                                <span class="mode-tag"><i class="fa-solid fa-cloud"></i> オンライン授業</span>
                             </div>
-                            <h2 class="card-main-title">JLPT N2 プロフェッショナル</h2>
-                            <p class="card-text-description">
-                                日本の大学進学・技術分野で必要な高度な読解力と専門的日本語運用能力を習得します。
-                            </p>
+
+                            <h2 class="card-main-title">JLPT N2 中上級コース</h2>
+
+                            <ul class="card-feature-list">
+                                <li>実践的で流暢なコミュニケーション力</li>
+                                <li>語彙力の強化</li>
+                                <li>JLPT試験対策（N2対応）</li>
+                            </ul>
+
                             <div class="card-pricing-footer">
-                                <a href="#" class="enroll-action-btn">
-                                    受講する <i class="fa-solid fa-arrow-right"></i>
-                                </a>
+                                <span class="enroll-action-btn">プロフェッショナル認定</span>
                             </div>
                         </div>
                     </article>
 
-                    <!-- Program Card 5 -->
-                    <article class="catalog-card" data-category="professional">
+                    <!-- Course 5: N1 -->
+                    <article class="catalog-card" data-category="advanced">
                         <div class="card-media-frame">
-                            <img src="img/course-intermediate.jpg" alt="ビジネス敬語プログラム">
-                            <span class="card-level-badge">専門コース</span>
+                            <img src="img/course-n1.jpg" alt="JLPT N1 Course">
                         </div>
                         <div class="card-body-content">
-                            <div class="card-meta-row">
-                                <span class="meta-pill"><i class="fa-regular fa-clock"></i> 2ヶ月</span>
-                                <span class="meta-pill"><i class="fa-regular fa-user"></i> 定員8名</span>
+                            <div class="card-delivery-modes">
+                                <span class="mode-tag"><i class="fa-solid fa-cloud"></i> オンライン授業</span>
                             </div>
-                            <h2 class="card-main-title">ビジネス日本語・敬語コース</h2>
-                            <p class="card-text-description">
-                                敬語・ビジネスメール・面接対策など、企業で即戦力となる日本語運用スキルを習得します。
-                            </p>
+
+                            <h2 class="card-main-title">JLPT N1 上級コース</h2>
+
+                            <ul class="card-feature-list">
+                                <li>高度な文法構造の習得</li>
+                                <li>ビジネス日本語（企業向け）</li>
+                                <li>複雑な読解力の強化</li>
+                            </ul>
+
                             <div class="card-pricing-footer">
-                                <a href="#" class="enroll-action-btn">
-                                    受講する <i class="fa-solid fa-arrow-right"></i>
-                                </a>
+                                <span class="enroll-action-btn">プロフェッショナル認定</span>
                             </div>
                         </div>
                     </article>
 
-                </div>
+                    <!-- Course 6: Advanced Speaking -->
+                    <article class="catalog-card" data-category="advanced">
+                        <div class="card-media-frame">
+                            <img src="img/course-speaking.jpg" alt="Advanced Speaking Class">
+                        </div>
+                        <div class="card-body-content">
+                            <div class="card-delivery-modes">
+                                <span class="mode-tag specialty"><i class="fa-solid fa-comments"></i> スピーキング特化</span>
+                            </div>
 
+                            <h2 class="card-main-title">上級スピーキング＆文化クラス</h2>
+
+                            <ul class="card-feature-list">
+                                <li>実生活で使う会話と生活表現</li>
+                                <li>ビジネス面接対策</li>
+                                <li>ディスカッション・プレゼンテーション能力</li>
+                            </ul>
+
+                            <div class="card-pricing-footer">
+                                <span class="enroll-action-btn">専門トラック</span>
+                            </div>
+                        </div>
+                    </article>
+                </div> <!-- /catalog-grid -->
             </div>
         </main>
 
         <footer class="site-footer">
             <div class="footer-upper-wrapper">
                 <div class="footer-container">
-                    
-                    
                     <div class="footer-column brand-column">
                         <div class="footer-logo">
                             <img src="img/logo.png" alt="ロゴ"/>
@@ -541,11 +571,11 @@
                         <h3 class="footer-heading">コース案内</h3>
                         <div class="heading-accent-dot"></div>
                         <ul class="footer-links-list">
-                            <li><a href="#">初級コース（N5）</a></li>
-                            <li><a href="#">基礎コース（N4）</a></li>
-                            <li><a href="#">中級コース（N3）</a></li>
-                            <li><a href="#">上級コース（N2）</a></li>
-                            <li><a href="#">ビジネス日本語（N1）</a></li>
+                            <li><a href="#">初級コース (N5)</a></li>
+                            <li><a href="#">基礎コース (N4)</a></li>
+                            <li><a href="#">中級コース (N3)</a></li>
+                            <li><a href="#">上級コース (N2)</a></li>
+                            <li><a href="#">ビジネス日本語 (N1)</a></li>
                         </ul>
                     </div>
 
