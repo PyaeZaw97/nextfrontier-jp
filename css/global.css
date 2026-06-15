@@ -61,6 +61,7 @@ body {
     /* align-items: flex-end; Aligns baseline tracks neatly with tall logos */
     /* padding: 12px 24px;  */
     padding-top: 12px;
+    padding-bottom: 12px;
 }
 
 /* Logo Alignment Parameters */
@@ -75,7 +76,7 @@ body {
 }
 
 .logo img {
-    height: 85px;      
+    height: 80px;      
     width: auto;       
     object-fit: contain;
 }
@@ -481,7 +482,7 @@ body {
 }
 
 .footer-logo img {
-    height: 38px;
+    height: 65px;
     width: auto;
     object-fit: contain;
    /* filter: brightness(0) invert(1); /* Forces your colored graphic cleanly into white lines grid output */

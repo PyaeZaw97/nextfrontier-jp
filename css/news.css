@@ -140,7 +140,8 @@
         }
 
         .featured-title{
-            color:var(--heading);
+            /* color:var(--heading); */
+            color: var(--brand-dark-blue);
             font-size:32px;
             font-weight:700;
             line-height:1.3;
