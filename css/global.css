@@ -171,6 +171,7 @@ body {
 .nav-menu a.active {
     color: #bc002d;
     background-color: rgba(188, 0, 45, 0.08);
+    border-bottom:3px solid #bc002d;
 }
 
 /* 🚀 NEW: Modern Soft Purple Pill Callout Button */
