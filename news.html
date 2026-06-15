@@ -592,7 +592,7 @@
 
     <script>
 
-        const API_URL="https://script.google.com/macros/s/AKfycbywNnySD8TaxDvjqmE-xmt1MO5FmBOPjr_QtbYQoce_1gljmA0UidRW3hissHvXJZfM/exec";
+        const API_URL="https://script.google.com/macros/s/AKfycbxxs5lGpTtx9TZAbcd23Xs6_LZnvMEAYWSGeJVuaabRZ4emy9jY9Tr0oWsfSi5eETowKA/exec";
 
         const LIMIT=10;
 
@@ -637,11 +637,11 @@
                 </div>
 
                 <h2 class="featured-title">
-                    ${item.title}
+                    ${item.title_en}
                 </h2>
 
                 <p>
-                ${item.content.substring(0,250)}...
+                ${item.content_en.substring(0,250)}...
                 </p>
 
                 </div>
@@ -658,7 +658,7 @@
 
         const date= new Date(item.date).toLocaleDateString('en-GB');
 
-        const shortContent= item.content.length>150 ? item.content.substring(0,150)+'...': item.content;
+        const shortContent = item.content_en.length > 150 ? item.content_en.substring(0,150) + '...' : item.content_en;
         html+=`
 
             <div class="news-card">
@@ -672,7 +672,7 @@
                     </div>
 
                     <div class="news-title">
-                        ${item.title}
+                        ${item.title_en}
                     </div>
 
                     <div class="news-content">
@@ -694,12 +694,11 @@
 
             const item=allNews[index];
 
-            document.getElementById('modalTitle').innerText=item.title;
+            document.getElementById('modalTitle').innerText=item.title_en;
 
             document.getElementById('modalDate').innerText=new Date(item.date).toLocaleDateString('en-GB');
 
-            document.getElementById('modalContent').innerText=item.content;
-
+            document.getElementById('modalContent').innerText=item.content_en;
             document.getElementById('newsModal').style.display='block';
         }
 
@@ -745,16 +744,15 @@
         const keyword=
         this.value.toLowerCase();
 
-        const filtered=
-        allNews.filter(item=>
+        const filtered= allNews.filter(item=>
 
-        item.title
+        item.title_jp
         .toLowerCase()
         .includes(keyword)
 
         ||
 
-        item.content
+        item.content_jp
         .toLowerCase()
         .includes(keyword)
 
