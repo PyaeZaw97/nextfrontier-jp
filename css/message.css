@@ -640,3 +640,127 @@ body {
         animation-duration: 22s; /* Speeds up tracking pacing loops slightly on small panels */
     }
 }
+
+/* ==========================================================================
+   ❓ NEXT FRONTIER ACCORDION FAQ ENGINE
+   ========================================================================== */
+.nft-faq-section {
+    width: 100%;
+    padding: 90px 24px;
+    background-color: #ffffff; /* Alternating layout tracks cleanly from grey carousel backdrop */
+}
+
+.nft-faq-accordion-wrapper {
+    max-width: 820px; /* Dense readability alignment grid width */
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.faq-accordion-item {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(66, 120, 147, 0.01);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-accordion-item:hover {
+    border-color: rgba(66, 120, 147, 0.3);
+    box-shadow: 0 10px 25px rgba(66, 120, 147, 0.04);
+}
+
+/* Accordion Trigger Track Row */
+.faq-accordion-trigger {
+    all: unset;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    cursor: pointer;
+    text-align: left;
+    background: #ffffff;
+    transition: background 0.3s ease;
+}
+
+/* Active Open Row Style Changes */
+.faq-accordion-item.is-open {
+    border-color: var(--nft-blue);
+    box-shadow: 0 12px 30px rgba(66, 120, 147, 0.06);
+}
+
+.faq-accordion-item.is-open .faq-accordion-trigger {
+    background: rgba(66, 120, 147, 0.02);
+}
+
+/* Visual Badge Elements Q */
+.faq-icon-q {
+    font-size: 0.9rem;
+    font-weight: 800;
+    background: rgba(211, 17, 39, 0.08); /* Light crimson hue matching badge metrics */
+    color: var(--nft-red);
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.faq-question-text {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    flex-grow: 1;
+    line-height: 1.4;
+}
+
+/* Interactive Rotating Icon Vector */
+.faq-chevron-icon {
+    font-size: 0.85rem;
+    color: var(--nft-blue);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-accordion-item.is-open .faq-chevron-icon {
+    transform: rotate(180deg);
+    color: var(--nft-red);
+}
+
+/* ==========================================================================
+   🎬 PANEL TRANSITION COLLAPSE SLIDE ENGINE
+   ========================================================================== */
+.faq-accordion-panel {
+    max-height: 0; /* Keeps panel closed by default parameter settings */
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    background: #ffffff;
+}
+
+.faq-panel-inner {
+    padding: 0 28px 24px 72px; /* Margins track offset exactly behind question string line text */
+    border-top: 1px dashed #f1f5f9;
+    padding-top: 20px;
+}
+
+.faq-panel-inner p {
+    font-size: 0.98rem;
+    color: var(--text-slate);
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* ==========================================================================
+   🖨️ PRINT MEDIA INSTRUCTIONS
+   ========================================================================== */
+@media print {
+    .nft-faq-section { display: block !important; padding: 20px 0 !important; }
+    .faq-accordion-panel { max-height: max-content !important; } /* Force open inside printed A4 pages */
+    .faq-panel-inner { padding-left: 28px !important; }
+    .faq-chevron-icon { display: none !important; }
+}
