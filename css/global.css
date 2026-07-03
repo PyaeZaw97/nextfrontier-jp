@@ -87,10 +87,11 @@ body {
 }
 
 .logo a {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
+    cursor: pointer;
     text-decoration: none;
-    color: inherit;
+    /* color: inherit; */
 }
 
 /* Right Column Structural Frame */
