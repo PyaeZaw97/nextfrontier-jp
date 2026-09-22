@@ -81,3 +81,66 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+
+/* =========================================================
+   MOBILE BOTTOM NAVIGATION
+   AUTOMATIC ACTIVE STATE
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const currentPage =
+        window.location.pathname.split("/").pop() || "index.html";
+
+    const navItems =
+        document.querySelectorAll(
+            ".mobile-bottom-nav .mobile-nav-item"
+        );
+
+    navItems.forEach(function (item) {
+
+        const href = item.getAttribute("href");
+
+        // Skip buttons such as Menu
+        if (!href) {
+            return;
+        }
+
+        const targetPage =
+            href.split("/").pop();
+
+        if (targetPage === currentPage) {
+            item.classList.add("active");
+        } else {
+            item.classList.remove("active");
+        }
+
+    });
+
+});
+
+/* =========================================================
+   MOBILE BOTTOM MENU BUTTON
+   Opens existing hamburger navigation
+   ========================================================= */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const bottomMenu =
+        document.getElementById("mobileBottomMenu");
+
+    const hamburger =
+        document.getElementById("menuToggle");
+
+    if (!bottomMenu || !hamburger) {
+        return;
+    }
+
+    bottomMenu.addEventListener("click", function () {
+
+        hamburger.click();
+
+    });
+
+});
+

@@ -771,4 +771,197 @@ body {
 }
 
 
+/* =========================================================
+   MOBILE BOTTOM NAVIGATION
+   ========================================================= */
+
+.mobile-bottom-nav {
+    display: none;
+}
+
+@media (max-width: 640px) {
+
+    .mobile-bottom-nav {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        height: 68px;
+
+        display: flex;
+        align-items: stretch;
+        justify-content: space-around;
+
+        background: rgba(255, 255, 255, 0.96);
+
+        backdrop-filter: blur(18px);
+        -webkit-backdrop-filter: blur(18px);
+
+        border-top: 1px solid rgba(15, 23, 42, 0.08);
+
+        box-shadow:
+            0 -4px 20px rgba(15, 23, 42, 0.08);
+
+        z-index: 5000;
+
+        padding:
+            6px
+            8px
+            calc(6px + env(safe-area-inset-bottom));
+    }
+
+    /* Each navigation item */
+    .mobile-nav-item {
+        position: relative;
+
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+        justify-content: center;
+
+        gap: 4px;
+
+        border: none;
+        outline: none;
+
+        background: transparent;
+
+        color: #64748b;
+
+        text-decoration: none;
+
+        font-family: inherit;
+
+        cursor: pointer;
+
+        transition:
+            color 0.25s ease,
+            transform 0.25s ease;
+    }
+
+    /* Icon */
+    .mobile-nav-item i {
+        font-size: 1.15rem;
+
+        transition:
+            transform 0.25s ease,
+            color 0.25s ease;
+    }
+
+    /* Label */
+    .mobile-nav-item span {
+        font-size: 0.68rem;
+
+        font-weight: 600;
+
+        line-height: 1;
+
+        white-space: nowrap;
+    }
+
+    /* Hover */
+    .mobile-nav-item:hover {
+        color: #bc002d;
+    }
+
+    /* =====================================================
+       ACTIVE STATE
+       ===================================================== */
+
+    .mobile-nav-item.active {
+        color: #bc002d;
+    }
+
+    /* Active icon background */
+    .mobile-nav-item.active i {
+        width: 38px;
+        height: 30px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 12px;
+
+        background: rgba(188, 0, 45, 0.08);
+
+        transform:
+            translateY(-2px)
+            scale(1.08);
+    }
+
+    /* Active top indicator */
+    .mobile-nav-item.active::before {
+        content: "";
+
+        position: absolute;
+
+        top: -6px;
+        left: 50%;
+
+        width: 28px;
+        height: 3px;
+
+        transform: translateX(-50%);
+
+        background-color: #bc002d;
+
+        border-radius:
+            0
+            0
+            5px
+            5px;
+    }
+
+    /* Menu button reset */
+    .mobile-menu-btn {
+        appearance: none;
+        -webkit-appearance: none;
+    }
+
+    /* Prevent content from being hidden behind fixed nav */
+    body {
+        padding-bottom: 68px;
+    }
+
+    /* Move Back To Top above bottom navigation */
+    .back-to-top-btn {
+        bottom: 86px;
+        right: 18px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    .mobile-bottom-nav {
+        height: 64px;
+    }
+
+    .mobile-nav-item i {
+        font-size: 1rem;
+    }
+
+    .mobile-nav-item span {
+        font-size: 0.62rem;
+    }
+
+    body {
+        padding-bottom: 64px;
+    }
+
+    .back-to-top-btn {
+        bottom: 80px;
+    }
+}
+
+
 
