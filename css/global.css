@@ -381,6 +381,10 @@ body {
         display: none; /* Show exclusively inside active mobile viewports */
     }
 
+    #backToTopBtn {
+        display: none;
+    }
+
     /* Transform Main Navigation into a Premium Frosted Glass Drawer */
     .main-nav {
         position: fixed;
