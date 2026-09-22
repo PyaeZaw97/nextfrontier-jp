@@ -378,7 +378,7 @@ body {
 
 @media (max-width: 768px) {
     .hamburger-toggle {
-        display: flex; /* Show exclusively inside active mobile viewports */
+        display: none; /* Show exclusively inside active mobile viewports */
     }
 
     /* Transform Main Navigation into a Premium Frosted Glass Drawer */
@@ -782,7 +782,7 @@ body {
 @media (max-width: 640px) {
 
     .mobile-bottom-nav {
-        position: fixed;
+        /* position: fixed; */
         left: 0;
         right: 0;
         bottom: 0;
@@ -924,9 +924,9 @@ body {
     }
 
     /* Prevent content from being hidden behind fixed nav */
-    body {
+    /* body {
         padding-bottom: 68px;
-    }
+    } */
 
     /* Move Back To Top above bottom navigation */
     .back-to-top-btn {
