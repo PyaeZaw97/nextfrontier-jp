@@ -119,6 +119,41 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+/* Keep the fixed bottom navigation aligned to the visible mobile viewport.
+   Some device previews expose a layout viewport taller than the visible screen. */
+function syncMobileNavigationViewport() {
+    const viewport = window.visualViewport;
+    const visibleWidth = viewport
+        ? viewport.width
+        : document.documentElement.clientWidth;
+    const visibleBottom = viewport
+        ? viewport.offsetTop + viewport.height
+        : document.documentElement.clientHeight;
+    const bottomGap = Math.max(0, window.innerHeight - visibleBottom);
+    const leftOffset = viewport ? viewport.offsetLeft : 0;
+
+    document.documentElement.style.setProperty(
+        "--mobile-viewport-width",
+        `${Math.round(visibleWidth)}px`
+    );
+    document.documentElement.style.setProperty(
+        "--mobile-viewport-bottom-gap",
+        `${Math.round(bottomGap)}px`
+    );
+    document.documentElement.style.setProperty(
+        "--mobile-viewport-left",
+        `${Math.round(leftOffset)}px`
+    );
+}
+
+syncMobileNavigationViewport();
+window.addEventListener("resize", syncMobileNavigationViewport);
+
+if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", syncMobileNavigationViewport);
+    window.visualViewport.addEventListener("scroll", syncMobileNavigationViewport);
+}
+
 /* =========================================================
    MOBILE BOTTOM MENU BUTTON
    Opens existing hamburger navigation
